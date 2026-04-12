@@ -6032,4 +6032,4200 @@ This guide is grounded by the actual theory spine you uploaded: UV/IR cutoff log
 The next file I’d write is `docs/11_visual_motif_library.md`, which would turn all this into a catalog of reusable looks:
 AdS cathedrals, screen skins, horizon glyphfire, RT bridges, precursor ghosts, cosmological pressure domes.
 
+Here’s the motif catalog file.
+
+# `docs/11_visual_motif_library.md`
+
+````md
+# 11 — Visual Motif Library
+
+## 11.1 What this file is
+
+This is the reusable lookbook for the repo.
+
+Not “style” in the empty moodboard sense.
+These motifs are scene archetypes tied to actual holographic structures:
+- area-law shells
+- AdS scale gradients
+- bulk-from-boundary emergence
+- RT membranes
+- preferred screens
+- stretched horizons
+- precursor ghosts
+- evanescent blur
+- future-horizon cosmology
+
+The goal is simple:
+take one motif,
+plug it into JS + GLSL + raymarching,
+and get a scene that still feels mathematically governed.
+
+The source spine for this motif library is clear:
+surface-first encoding and radial resolution gradients are already the right visual translation of the holographic principle and AdS scale logic. Entanglement naturally becomes filaments, tunnels, and minimal membranes. Preferred screens arise where null expansion vanishes. The de Sitter observer horizon is a preferred screen of constant area. And stretched horizons plus light-sheets provide the right logic for shell, screen, and horizon aesthetics. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2} :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
+
+---
+
+## 11.2 How to use the library
+
+Each motif has:
+
+- **Core principle**
+- **Visual DNA**
+- **Scene role**
+- **Shader strategy**
+- **Parameter cluster**
+- **Prompt tokens**
+- **Failure mode**
+
+You should be able to combine 2–4 motifs per scene without collapsing into nonsense.
+
+Rule:
+one motif usually controls **geometry**, one controls **information flow**, one controls **illumination**, and one controls **failure/degradation**.
+
+---
+
+## 11.3 Motif 01 — Surface Glyphshell
+
+### Core principle
+Information lives on the boundary, not in the volume.
+
+### Visual DNA
+- glowing shell
+- hollow or refractive interior
+- encoded glyph skin
+- pulsation on boundary
+- shell cracks, maps, logic scars
+
+### Scene role
+Best as:
+- character body
+- planet-like object
+- mask
+- chamber wall
+- seed object for null projection
+
+### Shader strategy
+- shell-weighted emission
+- UV-driven glyph atlas
+- transparent interior
+- weak interior refractive haze
+- optional local smear into bulk
+
+### Parameter cluster
+```json
+{
+  "shellGlow": 1.4,
+  "glyphDensity": 18.0,
+  "interiorOpacity": 0.15,
+  "surfacePulse": 0.35,
+  "logicCrackGain": 0.22
+}
+````
+
+### Prompt tokens
+
+* `surface-encoded`
+* `glyphshell`
+* `hollow interior`
+* `logic skin`
+* `boundary pulse`
+
+### Failure mode
+
+Making the interior equally detailed as the shell.
+
+This motif is directly supported by the visual-translation rules in your holographic art source, which explicitly says to prioritize surface detail, make interiors hollow/refractive, and let boundaries glow with encoded logic.  
+
+---
+
+## 11.4 Motif 02 — AdS Edge Saturation
+
+### Core principle
+
+Outer / near-boundary regions carry finer resolution than deeper bulk regions.
+
+### Visual DNA
+
+* ultradetailed edges
+* recursive outer ornament
+* softened deep center
+* depth-gradient detail loss
+* concentric or radial recursion
+
+### Scene role
+
+Best as:
+
+* tunnels
+* cathedral halls
+* infinite zoom spaces
+* boundary-ring chambers
+* camera-depth worlds
+
+### Shader strategy
+
+* coordinate warp with depth
+* frequency redshift by depth
+* boundary cutoff
+* finer noise bands near UV edge
+* smoother interior macro fields
+
+### Parameter cluster
+
+```json
+{
+  "boundaryDepth": 0.03,
+  "warpIntensity": 1.15,
+  "uvIrMix": 0.8,
+  "boundaryDetailGain": 1.8,
+  "deepBulkSoftness": 0.55
+}
+```
+
+### Prompt tokens
+
+* `radial scale gradient`
+* `edge-detailed`
+* `recursive tunnel`
+* `uv-ir depth`
+* `boundary saturation`
+
+### Failure mode
+
+Uniform frequency everywhere.
+
+This comes straight from the repo’s AdS logic and is echoed in the uploaded visual-translation rules as “radial resolution scaling”: outer regions highly detailed, deeper regions smoother and less resolved. 
+
+---
+
+## 11.5 Motif 03 — Light-Sheet Hologram
+
+### Core principle
+
+Information projects along converging null directions.
+
+### Visual DNA
+
+* beam fans
+* scanfronts
+* inward radial slices
+* converging light
+* partial reconstruction by beam overlap
+
+### Scene role
+
+Best as:
+
+* scanning objects
+* self-assembling bulk forms
+* projection scenes
+* ritualized build-up sequences
+* camera-facing reveal effects
+
+### Shader strategy
+
+* allowed null-direction beam families
+* termination at caustics
+* overlap-driven interior intensity
+* asymmetric future/past variants
+
+### Parameter cluster
+
+```json
+{
+  "beamFocus": 7.5,
+  "sheetFalloff": 1.1,
+  "causticGain": 1.25,
+  "terminationSharpness": 0.7,
+  "nullDirectionality": 0.92
+}
+```
+
+### Prompt tokens
+
+* `light-sheet`
+* `converging beams`
+* `null scanfront`
+* `caustic projection`
+* `bulk reconstructed from light`
+
+### Failure mode
+
+Flat inward projection with no directionality or termination.
+
+The covariant holographic setup explicitly defines light-sheets from null congruences with nonpositive expansion, and both Bousso and Bigatti–Susskind emphasize that holographic entropy is most naturally defined on light-like surfaces rather than naive spacelike volumes.   
+
+---
+
+## 11.6 Motif 04 — Preferred Screen Membrane
+
+### Core principle
+
+Some surfaces are privileged information displays because null expansion vanishes there.
+
+### Visual DNA
+
+* transparent membrane sheet
+* balanced glow
+* sharply legible symbol layer
+* calm surface amid chaotic beams
+* screen as “where the world chooses to appear”
+
+### Scene role
+
+Best as:
+
+* display plane
+* sacred membrane
+* event interface
+* projection stop surface
+* observer-centric image layer
+
+### Shader strategy
+
+* screen field from `theta ~ 0`
+* high coherence at preferred screen
+* layered screen stack option
+* light caustic accumulation onto membrane
+
+### Parameter cluster
+
+```json
+{
+  "screenThreshold": 0.03,
+  "preferredScreenBias": 1.6,
+  "screenOpacity": 0.22,
+  "glyphStability": 0.9,
+  "membraneBloom": 1.15
+}
+```
+
+### Prompt tokens
+
+* `preferred screen`
+* `projection membrane`
+* `information canvas`
+* `theta-zero surface`
+* `caustic shell`
+
+### Failure mode
+
+Using arbitrary glowing planes unrelated to projection logic.
+
+Bousso defines screens by inverting the projection construction and calls a screen “preferred” when the expansion vanishes on it; the source also presents these as especially efficient encoders of global information.  
+
+---
+
+## 11.7 Motif 05 — Entanglement Filaments
+
+### Core principle
+
+Correlation becomes visible connective tissue.
+
+### Visual DNA
+
+* threads
+* braids
+* luminous cords
+* shimmering lattice ties
+* thickness = relation strength
+
+### Scene role
+
+Best as:
+
+* portraits
+* paired figures
+* relation maps
+* emotional scene architecture
+* bridge pre-phase before full membrane
+
+### Shader strategy
+
+* relation graph to spline/field conversion
+* line thickness from entanglement weight
+* color drift from mutual information
+* flutter/jitter from unstable coupling
+
+### Parameter cluster
+
+```json
+{
+  "threadDensity": 36,
+  "threadThickness": 0.018,
+  "entanglementWeight": 0.7,
+  "colorShiftGain": 0.4,
+  "flutter": 0.08
+}
+```
+
+### Prompt tokens
+
+* `entanglement filaments`
+* `rainbow lattice`
+* `correlation threads`
+* `light braids`
+* `informational connective tissue`
+
+### Failure mode
+
+Using random webs with no relation metric.
+
+Your holographic visual notes explicitly translate entanglement into strands, filaments, and woven geometry, with thickness and brightness carrying relation strength.  
+
+---
+
+## 11.8 Motif 06 — RT Soap-Film Bridge
+
+### Core principle
+
+Shared information is encoded by a minimal-like connecting membrane.
+
+### Visual DNA
+
+* soap-film saddle
+* curved membrane bridge
+* floating minimal surface
+* tense, elegant geometry
+* sudden connect/disconnect phase changes
+
+### Scene role
+
+Best as:
+
+* shared chamber between two entities
+* portal-like bridge
+* static relation geometry
+* centerpiece of an entanglement scene
+
+### Shader strategy
+
+* graph decides bridge phase
+* connected vs disconnected membrane candidates
+* tension-controlled sheet SDF
+* tear field on collapse
+
+### Parameter cluster
+
+```json
+{
+  "bridgeThreshold": 0.45,
+  "rtTension": 0.72,
+  "membraneGlow": 1.28,
+  "disconnectSharpness": 0.35,
+  "sharedInteriorWeight": 0.6
+}
+```
+
+### Prompt tokens
+
+* `minimal surface`
+* `soap-film bridge`
+* `entanglement membrane`
+* `shared chamber`
+* `bulk bridge`
+
+### Failure mode
+
+Rendering the bridge as a tube instead of a membrane.
+
+The RT formula ties entanglement entropy to the area of a minimal bulk surface, and your visual translation source already renders this as glowing soap-film surfaces spanning boundary anchors.  
+
+---
+
+## 11.9 Motif 07 — Entanglement Tear
+
+### Core principle
+
+Loss of shared information tears geometry.
+
+### Visual DNA
+
+* ripped membrane
+* distortion gaps
+* shadow shear
+* broken cords
+* spatial discontinuity
+
+### Scene role
+
+Best as:
+
+* scene failure state
+* dramatic transition
+* heartbreak / severance / decoherence scene
+* geometry degradation effect
+
+### Shader strategy
+
+* noise-modulated cut field
+* bridge thickness collapse
+* local darkening as missing data, not occlusion
+* broken filament fragments
+
+### Parameter cluster
+
+```json
+{
+  "cutSeverity": 0.2,
+  "tearNoiseScale": 3.2,
+  "missingDataDarkness": 0.75,
+  "bridgeFailureGain": 1.1,
+  "shadowShear": 0.3
+}
+```
+
+### Prompt tokens
+
+* `entanglement tear`
+* `ripped light fabric`
+* `distortion gap`
+* `severed information threads`
+* `geometry degradation`
+
+### Failure mode
+
+Just fading opacity instead of structurally breaking geometry.
+
+The visual notes explicitly translate disentanglement into broken cords, distortion gaps, and ripped light-fabric. 
+
+---
+
+## 11.10 Motif 08 — Horizon Glyphfire
+
+### Core principle
+
+The horizon is an active information membrane, not a black outline.
+
+### Visual DNA
+
+* thermal shell
+* drifting heat glyphs
+* shell-aligned turbulence
+* sparse emission
+* thin ring accents
+
+### Scene role
+
+Best as:
+
+* black-hole scenes
+* deconfined thermal scenes
+* collapse events
+* shell-heavy cosmic icons
+
+### Shader strategy
+
+* true horizon + stretched horizon split
+* thermal scrambling at shell
+* sparse Hawking-like specks
+* photon-ring accent
+* interior readout suppression
+
+### Parameter cluster
+
+```json
+{
+  "horizonRadius": 0.9,
+  "stretchedHorizonWidth": 0.06,
+  "thermalScramble": 0.85,
+  "hawkingGlow": 0.18,
+  "photonRingGain": 0.45
+}
+```
+
+### Prompt tokens
+
+* `horizon glyphfire`
+* `thermal membrane`
+* `stretched horizon`
+* `photon ring`
+* `scrambling shell`
+
+### Failure mode
+
+Making the black hole a matte black sphere.
+
+Bigatti–Susskind describe stretched horizons on light-sheets and screen mapping, and the black-hole entropy/horizon-minimal-surface connection makes the horizon the right information membrane to emphasize.  
+
+---
+
+## 11.11 Motif 09 — Infall Melt
+
+### Core principle
+
+Object identity thermalizes near the stretched horizon.
+
+### Visual DNA
+
+* identity smear
+* shell-aligned streaking
+* detail melting into heat cells
+* redshifted color collapse
+* universalized local state
+
+### Scene role
+
+Best as:
+
+* object entering black hole
+* sacrifice / assimilation scene
+* information-processing metaphor
+* transition into shell logic
+
+### Shader strategy
+
+* identity-loss factor by distance to horizon
+* normals dissolve
+* object-specific colors replaced by shell palette
+* lingering nonlocal residue inside
+
+### Parameter cluster
+
+```json
+{
+  "identityLossSharpness": 0.8,
+  "shellAssimilation": 0.9,
+  "redshiftStrength": 0.4,
+  "detailDecay": 0.65,
+  "interiorResidue": 0.12
+}
+```
+
+### Prompt tokens
+
+* `infall melt`
+* `identity thermalization`
+* `shell assimilation`
+* `redshift dissolve`
+* `horizon consumption`
+
+### Failure mode
+
+Letting objects cross the shell unchanged.
+
+---
+
+## 11.12 Motif 10 — Caustic Cathedral
+
+### Core principle
+
+Focused null bundles create compression membranes and luminous architecture.
+
+### Visual DNA
+
+* focal shells
+* beam-formed vaults
+* cathedral ribs
+* compressed light curtains
+* sacred optics
+
+### Scene role
+
+Best as:
+
+* large environmental spaces
+* screen cathedrals
+* boss-arena type chambers
+* sacred geometry halls
+
+### Shader strategy
+
+* multiple converging beam families
+* caustic membrane SDFs
+* screen stack layering
+* transparent interlocking shells
+
+### Parameter cluster
+
+```json
+{
+  "beamCount": 8,
+  "causticRadius": 1.4,
+  "compressionBloom": 1.35,
+  "screenLayerCount": 5,
+  "vaultContrast": 0.42
+}
+```
+
+### Prompt tokens
+
+* `caustic cathedral`
+* `focused light vault`
+* `compression membrane`
+* `null-geometry hall`
+* `projection basilica`
+
+### Failure mode
+
+Treating caustics as random bright spots instead of structural membranes.
+
+The screen/light-sheet material explicitly associates projection with converging null congruences and termination surfaces, while your visual notes translate screens into glowing caustic geometries and layered depth slices.  
+
+---
+
+## 11.13 Motif 11 — Precursor Ghost
+
+### Core principle
+
+Deep bulk events can be encoded nonlocally before local readout catches up.
+
+### Visual DNA
+
+* low-frequency aura
+* early ghost geometry
+* broad global shimmer
+* hidden mode halo
+* too-early bulk knowledge
+
+### Scene role
+
+Best as:
+
+* prophecy scenes
+* collision-before-readout effects
+* eerie anticipation
+* latent-event chambers
+
+### Shader strategy
+
+* global hidden modes
+* precursor field mixed before local support cloud stabilizes
+* broad soft illumination
+* delayed sharpening
+
+### Parameter cluster
+
+```json
+{
+  "precursorWeight": 0.38,
+  "earlyKnowledgeGain": 0.55,
+  "ghostSpread": 0.7,
+  "localDelay": 0.4,
+  "globalModeDrift": 0.2
+}
+```
+
+### Prompt tokens
+
+* `precursor ghost`
+* `nonlocal aura`
+* `too-early geometry`
+* `global hidden modes`
+* `latent bulk event`
+
+### Failure mode
+
+Making the ghost look like ordinary fog instead of distributed encoded anticipation.
+
+---
+
+## 11.14 Motif 12 — Evanescent Blur Chamber
+
+### Core principle
+
+Some bulk features have exponentially tiny boundary imprint and can only be recovered coarsely.
+
+### Visual DNA
+
+* blurred hidden structures
+* soft but intense interior swells
+* impossible near-depth sharpness
+* STM-like reveal when approached
+* macroform without crisp readout
+
+### Scene role
+
+Best as:
+
+* black-hole atmospheres
+* dense barrier interiors
+* hidden chambers
+* unresolved deep-bulk zones
+
+### Shader strategy
+
+* recoverable depth cutoff from sigma
+* blurred reconstruction beyond threshold
+* optional probe mode for local reveal
+* suppressed boundary imprint
+
+### Parameter cluster
+
+```json
+{
+  "reconstructionSigma": 0.35,
+  "recoverableDepth": 0.35,
+  "evanescentWeight": 0.7,
+  "probeRevealGain": 1.2,
+  "boundarySuppression": 0.8
+}
+```
+
+### Prompt tokens
+
+* `evanescent blur`
+* `hidden bulk swell`
+* `coarse-grained chamber`
+* `STM reveal`
+* `unrecoverable crispness`
+
+### Failure mode
+
+Rendering all deep structure sharply regardless of geometry.
+
+---
+
+## 11.15 Motif 13 — Responsibility Cloud
+
+### Core principle
+
+A bulk point is owned by a distributed support region on the boundary.
+
+### Visual DNA
+
+* arcs on shell
+* distributed activation patches
+* weighted constellations on boundary
+* support halos
+* visible causation map
+
+### Scene role
+
+Best as:
+
+* debug pass
+* UI overlay
+* explanatory visualization
+* educational mode
+* operator scenes
+
+### Shader strategy
+
+* compute boundary support weights
+* draw responsibility arcs / masks
+* pulse only responsible source cells
+* optional temporal trails
+
+### Parameter cluster
+
+```json
+{
+  "supportRadius": 0.22,
+  "responsibilityGain": 1.0,
+  "arcGlow": 0.9,
+  "supportTrail": 0.16,
+  "temporalWindow": 0.4
+}
+```
+
+### Prompt tokens
+
+* `responsibility cloud`
+* `support arcs`
+* `boundary ownership map`
+* `causal shell overlay`
+* `distributed source control`
+
+### Failure mode
+
+Single UV point controls single bulk point.
+
+---
+
+## 11.16 Motif 14 — Renormalized Boundary Fire
+
+### Core principle
+
+The boundary can be violently divergent, but finite response emerges after local subtraction.
+
+### Visual DNA
+
+* overbright shell fire
+* shell singularity bands
+* subtraction scars
+* finite calm interior
+* anomaly rings that remain
+
+### Scene role
+
+Best as:
+
+* edge of AdS scenes
+* shell-heavy portraits
+* explanation/debug scenes
+* transition between chaos and form
+
+### Shader strategy
+
+* raw shell field
+* local counterterm subtraction
+* finite response pass
+* preserved anomaly chroma residue
+
+### Parameter cluster
+
+```json
+{
+  "shellDivergenceGain": 1.3,
+  "countertermStrength": 1.0,
+  "finitePartGain": 1.15,
+  "anomalyMix": 0.16,
+  "logTermGlow": 0.22
+}
+```
+
+### Prompt tokens
+
+* `renormalized boundary fire`
+* `shell divergence`
+* `counterterm scars`
+* `finite interior response`
+* `anomaly halo`
+
+### Failure mode
+
+Either clipping away the shell entirely or treating all shell brightness as meaningful structure.
+
+---
+
+## 11.17 Motif 15 — Observer Patch Dome
+
+### Core principle
+
+For one observer in de Sitter, the event horizon is a preferred finite screen.
+
+### Visual DNA
+
+* enclosing dome
+* finite visible universe
+* calm horizon boundary
+* observer-centric cosmic membrane
+* hidden beyond-dome silence
+
+### Scene role
+
+Best as:
+
+* cosmological scenes
+* VR-like observer worlds
+* consciousness-as-boundary scenes
+* finite infinity spaces
+
+### Shader strategy
+
+* spherical or distorted horizon dome
+* area-budget-driven complexity
+* beyond-dome suppression
+* soft thermal or de Sitter bath
+
+### Parameter cluster
+
+```json
+{
+  "hubbleRate": 0.85,
+  "observerHorizonGain": 1.0,
+  "screenAreaBudget": 1.0,
+  "teleologicalMix": 0.25,
+  "beyondPatchSuppression": 0.8
+}
+```
+
+### Prompt tokens
+
+* `observer patch`
+* `de Sitter dome`
+* `finite cosmic horizon`
+* `preferred null screen`
+* `visible universe membrane`
+
+### Failure mode
+
+Treating global de Sitter and observer de Sitter as the same scene.
+
+Bousso explicitly identifies the observer event horizon in de Sitter as a preferred null screen of constant area (4\pi H^{-2}) encoding the observable region.   
+
+---
+
+## 11.18 Motif 16 — Twin Infinity Walls
+
+### Core principle
+
+Global de Sitter can be encoded using paired past and future infinity screens.
+
+### Visual DNA
+
+* two immense opposed walls
+* bidirectional projection
+* time-sandwiched cosmos
+* vast spacelike luminous boundaries
+* global rather than observer-centric cosmology
+
+### Scene role
+
+Best as:
+
+* large cosmic halls
+* metaphysical universe scenes
+* temporal-axis environments
+* cosmological murals
+
+### Shader strategy
+
+* two giant asymptotic screen planes/curved walls
+* different color signatures for past vs future
+* central evolving bulk
+* opposing null-projection logic
+
+### Parameter cluster
+
+```json
+{
+  "pastWallGlow": 0.9,
+  "futureWallGlow": 1.1,
+  "temporalGradient": 0.5,
+  "globalInfinityMode": 1.0,
+  "screenSeparation": 8.0
+}
+```
+
+### Prompt tokens
+
+* `past infinity wall`
+* `future infinity wall`
+* `global de Sitter screens`
+* `temporal cosmos hall`
+* `dual asymptotic membranes`
+
+### Failure mode
+
+Collapsing global and observer cosmology into one generic skybox.
+
+Bousso’s global de Sitter construction uses past and future infinity as optimal screen-hypersurfaces for the full spacetime, while the observer horizon is a different, finite preferred screen for the observable patch.  
+
+---
+
+## 11.19 Motif 17 — Future-Horizon Pressure Sea
+
+### Core principle
+
+Present cosmic field strength can be driven by the future event horizon.
+
+### Visual DNA
+
+* low-frequency pressure fog
+* anticipatory expansion field
+* horizon-linked cosmic wash
+* nonlocal large-scale calm
+* teleological mood
+
+### Scene role
+
+Best as:
+
+* cosmic environments
+* de Sitter-like pressure scenes
+* background field for universe-scale chambers
+* “dark energy” visual channel
+
+### Shader strategy
+
+* future-horizon estimate in JS
+* density field from `rho ~ 1/L^2`
+* low-frequency pressure gradients
+* very slow, immense motion
+
+### Parameter cluster
+
+```json
+{
+  "futureEventHorizon": 3.8,
+  "holographicMatterDensity": 0.22,
+  "teleologicalMix": 0.7,
+  "cosmicExpansionGain": 0.55,
+  "lowFreqPressure": 0.9
+}
+```
+
+### Prompt tokens
+
+* `future-horizon pressure`
+* `dark energy field`
+* `teleological glow`
+* `anticipatory cosmos`
+* `horizon-linked expansion`
+
+### Failure mode
+
+Treating cosmic expansion as local random fog.
+
+---
+
+## 11.20 Motif 18 — Dark Radiation Residue
+
+### Core principle
+
+A primordial radiation-like residue can survive as a faint early-universe memory channel.
+
+### Visual DNA
+
+* antique ultraviolet grain
+* primordial scanlines
+* ancient shell noise
+* cold blue-violet afterglow
+* faint cosmic ash
+
+### Scene role
+
+Best as:
+
+* background layer
+* inflation scenes
+* cosmology transitions
+* subtle memory texture
+
+### Shader strategy
+
+* `a^-4`-like decay channel
+* low-amplitude additive residue
+* larger-scale coherence than ordinary noise
+* time-depth-linked fading
+
+### Parameter cluster
+
+```json
+{
+  "darkRadiationMix": 0.14,
+  "primordialGrain": 0.18,
+  "uvAsh": 0.3,
+  "epochFade": 0.6,
+  "backgroundColdness": 0.5
+}
+```
+
+### Prompt tokens
+
+* `dark radiation residue`
+* `primordial ash`
+* `ancient ultraviolet grain`
+* `cosmic memory scanlines`
+* `early-universe afterglow`
+
+### Failure mode
+
+Making primordial residue louder than the main cosmic field.
+
+---
+
+## 11.21 Motif 19 — Low-l Silence
+
+### Core principle
+
+The largest cosmological modes can be selectively suppressed.
+
+### Visual DNA
+
+* missing giant harmonics
+* cosmic silence bands
+* large void-like calm
+* incomplete spherical music
+* absent macrostructure
+
+### Scene role
+
+Best as:
+
+* inflationary scenes
+* subtle cosmology unease
+* CMB-inspired environments
+* huge calm backdrops
+
+### Shader strategy
+
+* suppress lowest spherical / radial modes
+* leave mid-scale structure alive
+* make the absence visible as elegant emptiness
+
+### Parameter cluster
+
+```json
+{
+  "inflationCutoff": 0.22,
+  "cmbSuppressionBias": 0.5,
+  "macroVoidGain": 0.35,
+  "harmonicMute": 0.7,
+  "midBandSurvival": 0.8
+}
+```
+
+### Prompt tokens
+
+* `missing harmonics`
+* `cosmic silence`
+* `low-l suppression`
+* `primordial cutoff`
+* `void resonance`
+
+### Failure mode
+
+Flattening the whole scene instead of selectively muting the largest modes.
+
+---
+
+## 11.22 Motif 20 — Observer-as-Boundary Interface
+
+### Core principle
+
+The observer can be rendered as a literal boundary condition.
+
+### Visual DNA
+
+* gaze-reactive screens
+* mirror-shell feedback
+* POV-solidifying geometry
+* eyes blooming only when seen
+* refractive attention field
+
+### Scene role
+
+Best as:
+
+* interactive scenes
+* installation-style pieces
+* first-person camera work
+* consciousness-heavy portraits
+
+### Shader strategy
+
+* camera vector drives visibility
+* screen/pupil activation where gaze intersects
+* recursive reflection feedback
+* perception-limited emergence
+
+### Parameter cluster
+
+```json
+{
+  "observerCentricity": 0.9,
+  "gazeSolidification": 0.7,
+  "reflectionFeedback": 0.55,
+  "povWarp": 0.3,
+  "attentionBloom": 1.1
+}
+```
+
+### Prompt tokens
+
+* `observer boundary`
+* `gaze-reactive screen`
+* `feedback mirror`
+* `perception topology`
+* `attention field`
+
+### Failure mode
+
+Treating observer-reactivity as a gimmick instead of the actual boundary condition.
+
+The uploaded visual-translation material explicitly includes “observer = boundary” and gaze-reactive emergence as a cognitive-symbolic extension of holographic art logic. 
+
+---
+
+## 11.23 Motif bundles that work especially well
+
+### Bundle A — Classic holographic portrait
+
+* Surface Glyphshell
+* Entanglement Filaments
+* Renormalized Boundary Fire
+
+### Bundle B — AdS ritual chamber
+
+* AdS Edge Saturation
+* Preferred Screen Membrane
+* Caustic Cathedral
+
+### Bundle C — Deep-bulk mystery
+
+* Precursor Ghost
+* Evanescent Blur Chamber
+* Responsibility Cloud
+
+### Bundle D — Black-hole liturgy
+
+* Horizon Glyphfire
+* Infall Melt
+* Entanglement Tear
+
+### Bundle E — Cosmic holography
+
+* Observer Patch Dome
+* Future-Horizon Pressure Sea
+* Dark Radiation Residue
+
+### Bundle F — Global cosmology mural
+
+* Twin Infinity Walls
+* Low-l Silence
+* Preferred Screen Membrane
+
+---
+
+## 11.24 Motif mixing rules
+
+### Mix by scale
+
+* shell motif at small scale
+* screen motif at medium scale
+* cosmology motif at large scale
+
+### Mix by function
+
+* one motif for encoding
+* one motif for relation
+* one motif for failure
+* one motif for atmosphere
+
+### Mix by causal status
+
+* present-visible motif
+* hidden/nonlocal motif
+* future-horizon or screen motif
+
+### Do not mix three failure motifs at once
+
+Example bad combo:
+
+* Entanglement Tear
+* Evanescent Blur Chamber
+* Infall Melt
+* Low-l Silence
+
+That can erase too much legibility.
+
+---
+
+## 11.25 Quick preset table
+
+| Preset             | Motifs                                                              | Use case                |
+| ------------------ | ------------------------------------------------------------------- | ----------------------- |
+| `glyph_saint`      | Surface Glyphshell + Renormalized Boundary Fire                     | Holographic portraits   |
+| `ads_basilica`     | AdS Edge Saturation + Caustic Cathedral + Preferred Screen Membrane | Cathedral/tunnel scenes |
+| `entropy_lovers`   | Entanglement Filaments + RT Soap-Film Bridge                        | Paired figures          |
+| `black_sun`        | Horizon Glyphfire + Infall Melt                                     | Black-hole scenes       |
+| `precursor_oracle` | Precursor Ghost + Responsibility Cloud                              | Latent-event scenes     |
+| `de_sitter_eye`    | Observer Patch Dome + Observer-as-Boundary Interface                | Interactive cosmic POV  |
+| `future_tide`      | Future-Horizon Pressure Sea + Dark Radiation Residue                | Cosmic ambient fields   |
+
+---
+
+## 11.26 Anti-cheapening rules
+
+A motif becomes fake when it loses the law that produced it.
+
+Examples:
+
+* threads without relation weights
+* membranes without minimal/tension logic
+* screens without null-projection logic
+* horizons without shell thermalization
+* cosmology without changing information budget
+* blur without recoverability logic
+* observer-reactivity without actual view dependence
+
+That is the main thing this repo should protect against.
+
+---
+
+## 11.27 Minimal machine-readable schema
+
+```json
+[
+  {
+    "id": "surface_glyphshell",
+    "category": "encoding",
+    "core_principle": "boundary stores information",
+    "scene_role": ["portrait", "object", "seed_surface"],
+    "shader_modules": ["shell_sdf", "glyph_uv", "source_field"],
+    "params": ["shellGlow", "glyphDensity", "interiorOpacity"],
+    "prompt_tokens": ["glyphshell", "surface-encoded", "hollow interior"],
+    "failure_mode": "interior more detailed than shell"
+  },
+  {
+    "id": "rt_soap_film_bridge",
+    "category": "relation",
+    "core_principle": "shared information becomes membrane",
+    "scene_role": ["bridge", "shared_chamber", "pair_scene"],
+    "shader_modules": ["membrane_sdf", "entanglement_field"],
+    "params": ["bridgeThreshold", "rtTension", "membraneGlow"],
+    "prompt_tokens": ["minimal surface", "soap-film bridge", "entanglement membrane"],
+    "failure_mode": "bridge rendered as tube"
+  }
+]
+```
+
+---
+
+## 11.28 The actual point of this file
+
+This library is here so that when you build scenes you can say:
+
+* “I want an observer-patch de Sitter portrait with glyphshell skin and precursor ghosts.”
+* “I want a black-hole chamber with screen-cathedral ribs and an entanglement tear.”
+* “I want a future-horizon cosmic sea with low-l silence and dark-radiation residue.”
+
+And those words map to actual code structure instead of just vibes.
+
+```
+
+The motifs above are anchored to the uploaded theory and visual-translation docs: surface-first encoding and radial scale gradients for shell and AdS motifs, entanglement threads and minimal membranes for relation motifs, screens and preferred screens for null-projection motifs, de Sitter observer and global screens for cosmological motifs, and stretched-horizon/light-sheet logic for horizon scenes. :contentReference[oaicite:28]{index=28} :contentReference[oaicite:29]{index=29} :contentReference[oaicite:30]{index=30} :contentReference[oaicite:31]{index=31} :contentReference[oaicite:32]{index=32} :contentReference[oaicite:33]{index=33}
+
+Next logical file is `docs/12_glossary.md`, and after that I’d start generating actual repo assets like `theory/concepts.json`, `theory/visual_mappings.json`, and the first GLSL scene files from these motif presets.
+```
+Yep — here’s the missing tail from that response:
+
+The motifs above are anchored to the uploaded theory and visual-translation docs: surface-first encoding and radial scale gradients for shell and AdS motifs, entanglement threads and minimal membranes for relation motifs, screens and preferred screens for null-projection motifs, de Sitter observer and global screens for cosmological motifs, and stretched-horizon/light-sheet logic for horizon scenes.
+
+Next logical file is `docs/12_glossary.md`, and after that I’d start generating actual repo assets like `theory/concepts.json`, `theory/visual_mappings.json`, and the first GLSL scene files from these motif presets.
+
+If you want, I’ll go straight into `docs/12_glossary.md` next.
+
+Absolutely — here’s the next file.
+
+# `docs/12_glossary.md`
+
+```md id="mvj7pq"
+# 12 — Glossary
+
+## 12.1 How to read this glossary
+
+This glossary is not written like a pure physics textbook.
+Each term has three layers:
+
+- **Physics meaning** — what it means in holography/math
+- **Repo meaning** — how we use it in this project
+- **Code meaning** — what it tends to become in JS / GLSL / raymarching
+
+The aim is to make every important word in the repo executable.
+
+---
+
+## AdS (Anti-de Sitter space)
+
+**Physics meaning**  
+A spacetime with negative cosmological constant, used as the canonical bulk geometry in AdS/CFT.
+
+**Repo meaning**  
+The default warped bulk space where radial depth behaves like scale.
+
+**Code meaning**  
+Usually a depth warp, metric-inspired scaling field, or coordinate remap.
+
+**Related**  
+UV/IR, boundary, bulk, Fefferman–Graham, holographic renormalization
+
+---
+
+## AdS/CFT
+
+**Physics meaning**  
+A holographic duality relating gravity in AdS to a conformal field theory on its boundary.
+
+**Repo meaning**  
+The master blueprint for “boundary data generates bulk structure.”
+
+**Code meaning**  
+The architecture rule: source maps on a lower-dimensional surface control higher-dimensional render behavior.
+
+---
+
+## anomaly
+
+**Physics meaning**  
+A symmetry-related leftover that survives renormalization, often appearing through logarithmic terms in near-boundary expansions.
+
+**Repo meaning**  
+A residual visual trace that should remain after subtracting local divergences.
+
+**Code meaning**  
+Thin chromatic scars, interference bands, or log-sensitive shell glows.
+
+---
+
+## apparent horizon
+
+**Physics meaning**  
+A surface where at least one orthogonal null expansion vanishes. In many constructions it separates normal, trapped, and anti-trapped regions.
+
+**Repo meaning**  
+A pivot surface where projection behavior changes.
+
+**Code meaning**  
+A mask or surface where beam direction, screen logic, or readout confidence flips.
+
+---
+
+## area law
+
+**Physics meaning**  
+The idea that entropy in gravitational systems scales with area rather than volume, especially in black-hole entropy.
+
+**Repo meaning**  
+Complexity budget should often scale with visible or effective surface area.
+
+**Code meaning**  
+Detail budget, symbol count, or sample density driven by shell area instead of object volume.
+
+---
+
+## asymptotic expansion
+
+**Physics meaning**  
+A near-boundary series expansion of bulk fields or metrics, with leading source terms and subleading response terms.
+
+**Repo meaning**  
+The rule that the boundary tells you how the deep bulk should begin to unfold.
+
+**Code meaning**  
+A layered field like `source + rho*response + rho^2*... + log(rho)*anomaly`.
+
+The near-boundary Fefferman–Graham setup, source/response split, and log-term anomaly structure are core parts of holographic renormalization, while AdS/CFT itself provides the bulk/boundary framework that makes this split meaningful. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+
+---
+
+## beam fan
+
+**Physics meaning**  
+Not a formal term, but a useful visual name for a family of null rays or light-sheet generators.
+
+**Repo meaning**  
+A visible projection family used to reconstruct bulk form from a surface.
+
+**Code meaning**  
+A set of directional density lobes or converging ray bundles.
+
+---
+
+## Bekenstein–Hawking entropy
+
+**Physics meaning**  
+The entropy of a black hole, proportional to one quarter of the horizon area in Planck units.
+
+**Repo meaning**  
+The reason horizons should be treated as information membranes.
+
+**Code meaning**  
+Horizon area sets shell complexity, glyph count, photon-ring richness, or thermal texture budget.
+
+---
+
+## bit thread
+
+**Physics meaning**  
+A flow-based reformulation of holographic entanglement where flux lines represent entanglement structure.
+
+**Repo meaning**  
+A good mental model for entanglement filaments and relation flows.
+
+**Code meaning**  
+Directed strand fields, flux curves, or graph-to-line render systems.
+
+---
+
+## black-hole complementarity
+
+**Physics meaning**  
+A principle proposed to preserve quantum mechanics in black-hole physics while giving up naive observer-independent locality across the horizon.
+
+**Repo meaning**  
+Outside and infalling viewpoints should not be rendered as one naive unified visual story.
+
+**Code meaning**  
+Observer-mode switch, horizon-shell logic, and different readout rules inside vs outside.
+
+---
+
+## boundary
+
+**Physics meaning**  
+The lower-dimensional surface or asymptotic region on which dual data lives.
+
+**Repo meaning**  
+The control surface for bulk generation.
+
+**Code meaning**  
+A UV map, shell surface, screen, horizon skin, or explicit operator texture domain.
+
+---
+
+## boundary operator
+
+**Physics meaning**  
+An operator in the boundary theory dual to a bulk field or excitation.
+
+**Repo meaning**  
+An encoded source unit on the shell or screen.
+
+**Code meaning**  
+A source texture, symbolic activation patch, graph node, or time-varying control cell.
+
+---
+
+## bulk
+
+**Physics meaning**  
+The higher-dimensional spacetime region dual to the boundary theory.
+
+**Repo meaning**  
+The interior generated from boundary logic.
+
+**Code meaning**  
+The 3D or 4D field domain your shaders raymarch through.
+
+The boundary/bulk relation, the extrapolate dictionary, and local-vs-nonlocal reconstruction all come from the holographic duality framework and its reconstruction machinery. :contentReference[oaicite:2]{index=2} :contentReference[oaicite:3]{index=3}
+
+---
+
+## bulk reconstruction
+
+**Physics meaning**  
+The attempt to recover bulk operators or fields from boundary data.
+
+**Repo meaning**  
+The process that turns shell data into interior form.
+
+**Code meaning**  
+A smearing kernel, nonlocal support cloud, precursor path, or coarse-grained recovery function.
+
+---
+
+## bulk-to-boundary propagator
+
+**Physics meaning**  
+A kernel used to connect bulk fields to boundary source behavior, especially in Euclidean/source contexts.
+
+**Repo meaning**  
+A source-injection map, not always the same as a Lorentzian smearing map.
+
+**Code meaning**  
+A source transfer operator, usually distinct from the reconstruction kernel used for state data.
+
+---
+
+## caustic
+
+**Physics meaning**  
+A focusing region where nearby null generators intersect or become singular as a congruence.
+
+**Repo meaning**  
+A projection termination membrane or compression zone.
+
+**Code meaning**  
+A bright shell, focal band, or stopping surface where beams collapse.
+
+---
+
+## causal wedge / causally connected region
+
+**Physics meaning**  
+The bulk region causally accessible from a given boundary region.
+
+**Repo meaning**  
+The admissible bulk territory owned by a boundary patch.
+
+**Code meaning**  
+A domain mask limiting which points a boundary segment can validly influence.
+
+---
+
+## coarse graining
+
+**Physics meaning**  
+A lower-resolution description that smooths over fine detail.
+
+**Repo meaning**  
+The correct fallback when sharp reconstruction is impossible.
+
+**Code meaning**  
+Blur, mip selection, low-pass filtering, reduced harmonic recovery, or reduced sample depth.
+
+---
+
+## congruence
+
+**Physics meaning**  
+A family of curves, often geodesics; in this repo, usually null geodesics.
+
+**Repo meaning**  
+A projection family.
+
+**Code meaning**  
+A set of beam directions or ray generators.
+
+---
+
+## conformal boundary
+
+**Physics meaning**  
+The boundary obtained after conformal compactification, often where the boundary theory is defined.
+
+**Repo meaning**  
+The ideal outer encoding surface of AdS-like scenes.
+
+**Code meaning**  
+The `z -> 0` side of the scene or the outer cutoff shell of an AdS warp.
+
+---
+
+## counterterm
+
+**Physics meaning**  
+A local covariant subtraction term added at a cutoff surface to remove divergences and define finite observables.
+
+**Repo meaning**  
+A structured subtraction layer, not a random fade or clip.
+
+**Code meaning**  
+A local shell function depending on cutoff, field value, and derivatives.
+
+---
+
+## covariant entropy bound
+
+**Physics meaning**  
+The statement that entropy on an allowed light-sheet is bounded by one quarter of the area of the generating surface.
+
+**Repo meaning**  
+The reason projection must be null, directional, and expansion-aware.
+
+**Code meaning**  
+A rule that only certain beam families are valid, and that their information budget is area-controlled.
+
+The covariant bound uses null congruences with nonpositive expansion, and Bousso’s screen construction builds preferred screens by projecting along directions of nonnegative expansion until the sign flips. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+
+---
+
+## de Sitter space
+
+**Physics meaning**  
+A spacetime with positive cosmological constant, central to cosmology and horizon thermodynamics.
+
+**Repo meaning**  
+The main cosmological holography lab.
+
+**Code meaning**  
+Either an observer-patch dome scene or a global paired-screen cosmology scene.
+
+---
+
+## detail budget
+
+**Physics meaning**  
+Not a formal physics term.
+
+**Repo meaning**  
+How much visible complexity a surface or region is allowed to carry.
+
+**Code meaning**  
+Noise octaves, symbol count, ray steps, line density, or microstructure frequency.
+
+---
+
+## dual theory
+
+**Physics meaning**  
+A lower-dimensional nongravitational theory equivalent to a gravitational bulk description, such as the CFT in AdS/CFT.
+
+**Repo meaning**  
+The readable surface-side description of a bulk scene.
+
+**Code meaning**  
+The API/control/schema layer that defines source-side logic.
+
+---
+
+## entanglement entropy
+
+**Physics meaning**  
+The entropy associated with tracing out part of a quantum system.
+
+**Repo meaning**  
+The master relation measure that becomes geometry in holographic scenes.
+
+**Code meaning**  
+A graph weight, bridge cost, membrane area proxy, or wedge-overlap strength.
+
+---
+
+## entanglement wedge
+
+**Physics meaning**  
+The bulk region naturally associated with a boundary subregion and its extremal surface.
+
+**Repo meaning**  
+The interior chamber owned by a boundary patch.
+
+**Code meaning**  
+A wedge field, region mask, or interior ownership volume.
+
+---
+
+## evanescent mode
+
+**Physics meaning**  
+A mode whose amplitude is exponentially suppressed at the boundary while growing toward the interior.
+
+**Repo meaning**  
+A hidden-bulk mode that destroys naive sharp readout.
+
+**Code meaning**  
+A field that forces coarse-grained reconstruction, blurred recovery, or probe-only reveal.
+
+Rosenhaus’s reconstruction discussions treat evanescent modes as the reason sharp local reconstruction can require exponential precision, motivating coarse-grained recovery instead. :contentReference[oaicite:6]{index=6}
+
+---
+
+## event horizon
+
+**Physics meaning**  
+The causal boundary beyond which signals cannot escape to a given observer.
+
+**Repo meaning**  
+A hidden-region threshold and a screen candidate.
+
+**Code meaning**  
+A geometric radius or surface where readout confidence collapses.
+
+---
+
+## expansion scalar (theta)
+
+**Physics meaning**  
+A measure of whether a congruence is focusing or diverging.
+
+**Repo meaning**  
+The validity test for light-sheets and the detector for preferred screens.
+
+**Code meaning**  
+A signed field that gates beam families and highlights theta-zero surfaces.
+
+---
+
+## Fefferman–Graham coordinates
+
+**Physics meaning**  
+A standard near-boundary coordinate system for asymptotically AdS spacetimes.
+
+**Repo meaning**  
+The coordinate language of source/response extraction.
+
+**Code meaning**  
+A cutoff-coordinate system using `rho` or similar depth to organize asymptotic terms.
+
+---
+
+## finite part
+
+**Physics meaning**  
+The renormalized remainder after divergent terms and counterterms are handled.
+
+**Repo meaning**  
+The actually meaningful visible response.
+
+**Code meaning**  
+The quantity you usually want to shade after subtracting local shell artifacts.
+
+---
+
+## future event horizon
+
+**Physics meaning**  
+A horizon length defined by integrating the future expansion history of the universe.
+
+**Repo meaning**  
+The preferred IR scale for holographic dark-energy scenes.
+
+**Code meaning**  
+A forecast-driven cosmic control parameter that sets low-frequency pressure fields.
+
+The cosmology notes explicitly use the future event horizon as the IR scale in holographic dark energy, leading to a density of order \(3C^2M_p^2/L^2\), and Bousso shows that de Sitter also has preferred screen structures tied to horizons and infinity. :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}
+
+---
+
+## global screen
+
+**Physics meaning**  
+A screen used to encode an entire spacetime or a very large part of it.
+
+**Repo meaning**  
+A universe-scale display surface.
+
+**Code meaning**  
+A huge wall, infinity surface, or evolving screen-hypersurface stack.
+
+---
+
+## holographic dark energy / holographic matter
+
+**Physics meaning**  
+A cosmological energy-density model of order \(3C^2M_p^2/L^2\), often tied to an IR horizon scale.
+
+**Repo meaning**  
+A cosmic pressure field linked to screen size or future horizon size.
+
+**Code meaning**  
+A low-frequency density field controlling expansive cosmic mood.
+
+---
+
+## holographic principle
+
+**Physics meaning**  
+The idea that the information content of a region is bounded by surface area rather than volume, with covariant realization on light-sheets.
+
+**Repo meaning**  
+The base rule of the whole project.
+
+**Code meaning**  
+Boundary-driven interiors, area-driven detail budgets, and null-projection logic.
+
+---
+
+## holographic renormalization
+
+**Physics meaning**  
+The near-boundary regularization and subtraction procedure used to define finite observables in holographic setups.
+
+**Repo meaning**  
+How the repo keeps boundary blow-up meaningful instead of messy.
+
+**Code meaning**  
+Cutoff control, asymptotic decomposition, counterterm subtraction, and anomaly preservation.
+
+---
+
+## horizon area budget
+
+**Physics meaning**  
+A repo phrase derived from the black-hole area law.
+
+**Repo meaning**  
+The complexity budget assigned to a horizon shell by its area.
+
+**Code meaning**  
+A function of radius used to drive shell detail and emission structure.
+
+---
+
+## light-ray / null geodesic
+
+**Physics meaning**  
+A null curve in spacetime.
+
+**Repo meaning**  
+The path along which valid holographic projection happens.
+
+**Code meaning**  
+A directional ray family or beam trajectory.
+
+---
+
+## light-sheet
+
+**Physics meaning**  
+A null hypersurface generated from a surface along an orthogonal congruence with nonpositive expansion.
+
+**Repo meaning**  
+The valid projection manifold for holographic information flow.
+
+**Code meaning**  
+A converging beam density field with termination rules.
+
+---
+
+## membrane
+
+**Physics meaning**  
+A general geometric surface. In this repo it often means an RT-like bridge, screen, or horizon skin.
+
+**Repo meaning**  
+A visible information-bearing surface.
+
+**Code meaning**  
+A thin SDF shell or tensioned sheet field.
+
+---
+
+## minimal surface
+
+**Physics meaning**  
+A surface of extremal/minimal area, central to the Ryu–Takayanagi prescription in static cases.
+
+**Repo meaning**  
+The geometric form of shared information.
+
+**Code meaning**  
+A bridge membrane, saddle field, or tension-minimized sheet.
+
+Headrick’s notes motivate RT by the black-hole horizon and then state the general area formula for entanglement in static holographic settings. :contentReference[oaicite:9]{index=9} :contentReference[oaicite:10]{index=10}
+
+---
+
+## mutual information
+
+**Physics meaning**  
+A measure of shared information between two subsystems.
+
+**Repo meaning**  
+A threshold-control quantity for deciding whether bridges or shared chambers should appear.
+
+**Code meaning**  
+A graph weight or phase variable controlling connected vs disconnected geometry.
+
+---
+
+## null projection
+
+**Physics meaning**  
+Projection of information along null hypersurfaces.
+
+**Repo meaning**  
+The correct holographic projection logic.
+
+**Code meaning**  
+Beam-march or screen-construction logic based on null directions.
+
+---
+
+## observer patch
+
+**Physics meaning**  
+The causally accessible region for a given observer, especially in de Sitter.
+
+**Repo meaning**  
+The finite visible universe mode.
+
+**Code meaning**  
+A dome-like horizon-bounded scene with beyond-horizon suppression.
+
+---
+
+## operator support cloud
+
+**Physics meaning**  
+Not a standard formal term; a repo phrase for the distributed boundary support controlling a bulk point.
+
+**Repo meaning**  
+A visualization of smearing support.
+
+**Code meaning**  
+A weighted set of boundary samples or a debug overlay.
+
+---
+
+## photon ring
+
+**Physics meaning**  
+A thin optical ring associated with strongly lensed null trajectories near a compact object.
+
+**Repo meaning**  
+A horizon-adjacent visual accent.
+
+**Code meaning**  
+A thin bright band around a black-hole shell.
+
+---
+
+## precursor
+
+**Physics meaning**  
+A highly nonlocal boundary operator encoding bulk information before local boundary observables can cleanly reveal it.
+
+**Repo meaning**  
+The hidden global channel for early or unreachable bulk knowledge.
+
+**Code meaning**  
+A global low-frequency field, graph mode, or distributed latent control path.
+
+---
+
+## preferred screen
+
+**Physics meaning**  
+A screen on which the expansion vanishes.
+
+**Repo meaning**  
+A specially efficient display membrane.
+
+**Code meaning**  
+A theta-zero emphasis surface with extra coherence, brightness, or legibility.
+
+---
+
+## radial depth
+
+**Physics meaning**  
+In AdS-like settings, the extra coordinate organizing scale.
+
+**Repo meaning**  
+Depth is not just distance; it is descriptive scale.
+
+**Code meaning**  
+A coordinate controlling frequency, warp strength, blur, and RG behavior.
+
+Bousso’s preferred-screen logic, de Sitter/FRW screen examples, and AdS boundary/cutoff intuition all feed this repo notion that geometry uses special surfaces and special depth, not plain Euclidean distance. :contentReference[oaicite:11]{index=11} :contentReference[oaicite:12]{index=12} :contentReference[oaicite:13]{index=13}
+
+---
+
+## recoverable depth
+
+**Physics meaning**  
+A repo phrase inspired by evanescent-mode limits: how deep sharp reconstruction can go at a given resolution.
+
+**Repo meaning**  
+The maximum depth where your current readout can still be trusted.
+
+**Code meaning**  
+A scalar threshold tied to coarse-graining scale.
+
+---
+
+## reconstruction confidence
+
+**Physics meaning**  
+Not a standard formal term.
+
+**Repo meaning**  
+A numerical estimate of how valid local bulk readout is.
+
+**Code meaning**  
+A mask combining trapped-geodesic, horizon, support, and evanescence tests.
+
+---
+
+## Rényi entropy
+
+**Physics meaning**  
+A family of entropies generalizing von Neumann entropy.
+
+**Repo meaning**  
+Useful when you want multiple relation scales rather than one single entanglement number.
+
+**Code meaning**  
+Alternative graph-weight channels or multi-order relation metrics.
+
+---
+
+## response field
+
+**Physics meaning**  
+The subleading or state-dependent bulk reaction to a source.
+
+**Repo meaning**  
+What the interior does because of the boundary, not what the boundary explicitly writes.
+
+**Code meaning**  
+A derived field layered on top of source data.
+
+---
+
+## RG flow / renormalization-group flow
+
+**Physics meaning**  
+Scale evolution of an effective description.
+
+**Repo meaning**  
+The reason deeper bulk becomes coarser or more collective.
+
+**Code meaning**  
+Depth-dependent filtering, structure merging, or frequency suppression.
+
+---
+
+## Ryu–Takayanagi formula (RT)
+
+**Physics meaning**  
+For static holographic states, entanglement entropy of a boundary region equals bulk minimal-surface area divided by \(4G_N\).
+
+**Repo meaning**  
+Connectivity becomes membrane geometry.
+
+**Code meaning**  
+A bridge-phase engine driven by relation weights and minimal/tension logic.
+
+---
+
+## screen
+
+**Physics meaning**  
+A surface obtained by projecting along a null hypersurface in the noncontracting direction and stopping before expansion turns negative.
+
+**Repo meaning**  
+A place where the universe “chooses to display itself.”
+
+**Code meaning**  
+A projection membrane, display surface, or layered screen stack element.
+
+---
+
+## screen-hypersurface
+
+**Physics meaning**  
+A one-parameter family of screens.
+
+**Repo meaning**  
+A moving or layered display geometry across spacetime.
+
+**Code meaning**  
+An animated stack of screens or membrane sequence.
+
+---
+
+## smearing function / smearing kernel
+
+**Physics meaning**  
+A kernel expressing a bulk operator as a distributed integral over boundary operators in favorable settings.
+
+**Repo meaning**  
+The main local reconstruction engine.
+
+**Code meaning**  
+A weighted sum over boundary samples across space and time.
+
+Bousso’s screen language, RT’s geometry, and Rosenhaus’s reconstruction program all reinforce the repo split between local kernels, preferred surfaces, and nonlocal rescue channels when local readout fails. :contentReference[oaicite:14]{index=14} :contentReference[oaicite:15]{index=15}
+
+---
+
+## source field
+
+**Physics meaning**  
+The leading boundary datum acting as a source for a dual operator.
+
+**Repo meaning**  
+What you intentionally write on the shell or screen.
+
+**Code meaning**  
+A boundary texture, glyph map, operator channel, or explicit control texture.
+
+---
+
+## stretched horizon
+
+**Physics meaning**  
+A timelike surface just outside the true event horizon, used as the operational membrane in complementarity-style descriptions.
+
+**Repo meaning**  
+The visible horizon skin.
+
+**Code meaning**  
+A shell offset from the mathematical horizon where scrambling and glow are rendered.
+
+The cosmology review explicitly describes the stretched horizon as a timelike surface just outside the mathematical lightlike horizon and discusses mapping horizon data onto screens via light-sheets. :contentReference[oaicite:16]{index=16}
+
+---
+
+## theta-zero surface
+
+**Physics meaning**  
+A surface where the null expansion vanishes.
+
+**Repo meaning**  
+Usually a preferred screen candidate.
+
+**Code meaning**  
+A highlight mask for stable membranes or balanced encoding zones.
+
+---
+
+## trapped null geodesic
+
+**Physics meaning**  
+A null geodesic that does not escape cleanly to the boundary.
+
+**Repo meaning**  
+A warning sign that local reconstruction may fail.
+
+**Code meaning**  
+A geometry flag that lowers reconstruction confidence and increases nonlocal/coarse-grained behavior.
+
+---
+
+## UV/IR relation
+
+**Physics meaning**  
+The correspondence between ultraviolet structure in the boundary theory and infrared/near-boundary cutoff structure in the bulk.
+
+**Repo meaning**  
+Outer depth is high detail; deeper bulk is lower-resolution collective structure.
+
+**Code meaning**  
+Depth-based frequency scaling and boundary cutoff logic.
+
+---
+
+## volume illusion
+
+**Physics meaning**  
+Not a standard term.
+
+**Repo meaning**  
+The sense that a large interior is being reconstructed from a lower-dimensional source.
+
+**Code meaning**  
+Hollow interiors, beam-built bodies, or shell-extruded field volumes.
+
+---
+
+## von Neumann entropy
+
+**Physics meaning**  
+The entropy \(S = -\mathrm{tr}(\rho \log \rho)\) of a quantum state.
+
+**Repo meaning**  
+The baseline notion of entropy beneath entanglement discussions.
+
+**Code meaning**  
+Usually an abstract metric rather than a directly rendered field.
+
+---
+
+## wedge
+
+**Physics meaning**  
+A region selected by causal or entanglement structure, such as a causal wedge or entanglement wedge.
+
+**Repo meaning**  
+A bulk ownership zone.
+
+**Code meaning**  
+A region mask, cone, or volume field tied to a boundary patch.
+
+---
+
+## z cutoff / rho cutoff
+
+**Physics meaning**  
+A bulk cutoff surface near the AdS boundary used to regulate divergences.
+
+**Repo meaning**  
+The place where source-rich shell behavior is sampled and renormalized.
+
+**Code meaning**  
+`boundaryDepth`, `cutoffRho`, or `zMin`.
+```
+
+A lot of the glossary’s backbone comes straight from Bousso’s definitions of screens, preferred screens, and projection; from the cosmology notes on stretched horizons, future event horizons, and holographic matter density; and from the RT/entanglement notes on minimal surfaces and entropy geometry.    
+
+Now that the doc spine is in place, the next useful move is to start generating the actual repo assets:
+
+* `theory/concepts.json`
+* `theory/equations.json`
+* `theory/visual_mappings.json`
+* first shader scene templates
+
+Good. Now we switch from docs into **machine-readable repo assets**.
+
+These files turn the theory stack into something your app can actually load: concepts, mappings, presets, and module routing. The structure below keeps the important distinctions intact — source vs response, RT membranes vs decorative links, screens vs shells, and local vs nonlocal reconstruction modes.    
+
+---
+
+# `theory/concepts.json`
+
+```json id="l5x4tg"
+[
+  {
+    "id": "holographic_principle",
+    "name": "Holographic Principle",
+    "physics_meaning": "Information content scales with boundary area rather than bulk volume.",
+    "math_forms": [
+      "S_BH = A / (4 G_N ħ)",
+      "S[L(B)] <= A(B) / 4",
+      "N_dof <= A / 4"
+    ],
+    "render_laws": [
+      "surface controls interior",
+      "area controls detail budget",
+      "volume can be hollow",
+      "projection should favor shells and scanfronts"
+    ],
+    "parameters": [
+      "boundaryDensity",
+      "areaBudget",
+      "projectionSharpness",
+      "entropyGlow",
+      "interiorOpacity"
+    ],
+    "modules": [
+      "shell_sdf",
+      "source_field",
+      "boundary_data_field"
+    ],
+    "motifs": [
+      "surface_glyphshell",
+      "renormalized_boundary_fire"
+    ],
+    "failure_modes": [
+      "uniform detail everywhere",
+      "interior more detailed than boundary",
+      "purely decorative shell"
+    ]
+  },
+  {
+    "id": "ads_geometry_and_scale",
+    "name": "AdS Geometry and Scale",
+    "physics_meaning": "Radial bulk depth organizes scale; near-boundary zones encode UV detail and deeper bulk encodes coarser structure.",
+    "math_forms": [
+      "ds^2 = (L^2 / z^2)(dz^2 + dx_mu dx^mu)",
+      "(t,x,z) -> (lambda t, lambda x, lambda z)",
+      "ds^2 = d rho^2/(4 rho^2) + (1/rho) g_ij(x,rho) dx^i dx^j"
+    ],
+    "render_laws": [
+      "radial depth = scale",
+      "boundary zones carry finer frequencies",
+      "deep bulk softens into collective fields"
+    ],
+    "parameters": [
+      "boundaryDepth",
+      "warpIntensity",
+      "uvIrMix",
+      "boundaryDetailGain",
+      "deepBulkSoftness"
+    ],
+    "modules": [
+      "ads_spaces",
+      "uv_ir_field",
+      "radial_flows"
+    ],
+    "motifs": [
+      "ads_edge_saturation"
+    ],
+    "failure_modes": [
+      "uniform frequency across depth",
+      "no boundary cutoff logic",
+      "plain Euclidean tunnel"
+    ]
+  },
+  {
+    "id": "bulk_boundary_dictionary",
+    "name": "Bulk Boundary Dictionary",
+    "physics_meaning": "Bulk fields are encoded by boundary operators; finite-depth reconstruction may use smearing kernels or nonlocal structures.",
+    "math_forms": [
+      "lim_{z->0} z^{-Delta} Phi(x,t,z) = O(x,t)",
+      "Phi(B) = ∫ db' K(B|b') O(b') + ...",
+      "Z_bulk[phi_(0)] = <exp(-∫ phi_(0) O)>"
+    ],
+    "render_laws": [
+      "bulk points depend on distributed boundary support",
+      "source and response must be separated",
+      "global channels can encode deep events"
+    ],
+    "parameters": [
+      "smearRadius",
+      "smearTimeWindow",
+      "responseGain",
+      "causalLag",
+      "nonlocalMix"
+    ],
+    "modules": [
+      "operator_smear",
+      "source_field",
+      "response_field",
+      "boundary_encoders"
+    ],
+    "motifs": [
+      "responsibility_cloud"
+    ],
+    "failure_modes": [
+      "one UV point controls one bulk point",
+      "source and response collapsed together"
+    ]
+  },
+  {
+    "id": "entanglement_geometry",
+    "name": "Entanglement Geometry",
+    "physics_meaning": "Entanglement entropy is represented by bulk minimal surfaces in static holographic settings.",
+    "math_forms": [
+      "S(A) = Area(gamma_A) / (4 G_N)",
+      "I(A:B) = S(A) + S(B) - S(A union B)",
+      "I(A:BC) >= I(A:B) + I(A:C)"
+    ],
+    "render_laws": [
+      "relation creates bridges",
+      "shared information creates membranes",
+      "disconnects tear geometry",
+      "bridge phase can change abruptly"
+    ],
+    "parameters": [
+      "entanglementWeight",
+      "bridgeThreshold",
+      "rtTension",
+      "sharedInteriorWeight",
+      "cutSeverity"
+    ],
+    "modules": [
+      "entanglement_field",
+      "membrane_sdfs",
+      "entanglement_graphs"
+    ],
+    "motifs": [
+      "entanglement_filaments",
+      "rt_soap_film_bridge",
+      "entanglement_tear"
+    ],
+    "failure_modes": [
+      "random webbing",
+      "tube bridges instead of membranes",
+      "no connected/disconnected phase logic"
+    ]
+  },
+  {
+    "id": "holographic_renormalization",
+    "name": "Holographic Renormalization",
+    "physics_meaning": "Near-boundary divergences are regulated by a cutoff and removed with local covariant counterterms, leaving finite source/response data and anomalies.",
+    "math_forms": [
+      "F(x,rho)=rho^m[f_(0)+f_(2)rho+...+rho^n(f_(2n)+log(rho)f~_(2n))+...]",
+      "ds^2 = d rho^2/(4 rho^2) + (1/rho) g_ij(x,rho) dx^i dx^j"
+    ],
+    "render_laws": [
+      "boundary blow-up is structured",
+      "subtract local shell artifacts",
+      "preserve finite response",
+      "keep anomaly residue visible"
+    ],
+    "parameters": [
+      "cutoffRho",
+      "countertermStrength",
+      "shellDivergenceGain",
+      "finitePartGain",
+      "anomalyMix"
+    ],
+    "modules": [
+      "renorm_field",
+      "post_renorm_debug"
+    ],
+    "motifs": [
+      "renormalized_boundary_fire"
+    ],
+    "failure_modes": [
+      "hard-clipping the boundary",
+      "dropping divergences by hand",
+      "discarding anomaly structure"
+    ]
+  },
+  {
+    "id": "black_holes_and_horizons",
+    "name": "Black Holes and Horizons",
+    "physics_meaning": "Horizon area sets black-hole entropy; the stretched horizon acts as an operational information membrane and local readout degrades near and behind it.",
+    "math_forms": [
+      "S_BH = A_hor / (4 G_N)",
+      "r_s = 2MG",
+      "S_total = S_matter + S_BH"
+    ],
+    "render_laws": [
+      "horizon area controls shell complexity",
+      "true horizon and stretched horizon should be separated",
+      "infalling identity thermalizes near shell",
+      "interior readout collapses"
+    ],
+    "parameters": [
+      "horizonRadius",
+      "stretchedHorizonWidth",
+      "thermalScramble",
+      "hawkingGlow",
+      "interiorReadoutLoss"
+    ],
+    "modules": [
+      "blackhole_sdfs",
+      "horizon_scramble",
+      "photon_ring"
+    ],
+    "motifs": [
+      "horizon_glyphfire",
+      "infall_melt"
+    ],
+    "failure_modes": [
+      "matte black sphere",
+      "fully readable interior",
+      "no shell thermalization"
+    ]
+  },
+  {
+    "id": "light_sheets_and_screens",
+    "name": "Light-Sheets and Screens",
+    "physics_meaning": "Allowed holographic projection occurs along null congruences with nonpositive expansion; screens collect projected information and preferred screens occur at zero expansion.",
+    "math_forms": [
+      "S[L(B)] <= A(B) / 4",
+      "L(b) = L+(b) ∩ L-(b)",
+      "H(b) = C(b) = L(b)"
+    ],
+    "render_laws": [
+      "projection should be directional and convergent",
+      "beam families terminate at caustics or sign flips",
+      "screens are display membranes",
+      "theta-zero surfaces deserve emphasis"
+    ],
+    "parameters": [
+      "nullExpansion",
+      "sheetTerminationMode",
+      "causticGain",
+      "screenThreshold",
+      "preferredScreenBias"
+    ],
+    "modules": [
+      "light_sheet_field",
+      "screen_sdfs",
+      "null_geodesic_camera"
+    ],
+    "motifs": [
+      "light_sheet_hologram",
+      "preferred_screen_membrane",
+      "caustic_cathedral"
+    ],
+    "failure_modes": [
+      "uniform inward projection",
+      "arbitrary decorative planes",
+      "ignoring caustics"
+    ]
+  },
+  {
+    "id": "nonlocality_and_smearing",
+    "name": "Nonlocality and Smearing",
+    "physics_meaning": "Local smearing works in favorable backgrounds, but trapped null geodesics, barriers, and evanescent modes can force nonlocal or coarse-grained reconstruction.",
+    "math_forms": [
+      "Phi(B) = ∫ db' K(B|b') O(b')",
+      "d/dr (f/r^2) > 0",
+      "z < sigma"
+    ],
+    "render_laws": [
+      "support clouds are distributed",
+      "precursors can know too early",
+      "some deep zones should stay blurry",
+      "resolution and recoverable depth trade off"
+    ],
+    "parameters": [
+      "precursorWeight",
+      "kernelFailureMode",
+      "trappedGeodesicBias",
+      "evanescentWeight",
+      "reconstructionSigma"
+    ],
+    "modules": [
+      "operator_smear",
+      "precursor_field",
+      "reconstruction_modes"
+    ],
+    "motifs": [
+      "precursor_ghost",
+      "evanescent_blur_chamber",
+      "responsibility_cloud"
+    ],
+    "failure_modes": [
+      "perfect crisp readout in hostile geometry",
+      "no nonlocal rescue channel",
+      "no depth-resolution tradeoff"
+    ]
+  },
+  {
+    "id": "cosmology_and_holographic_matter",
+    "name": "Cosmology and Holographic Matter",
+    "physics_meaning": "Cosmological holography uses time-dependent and embedded screens; holographic matter density is tied to an IR scale such as the future event horizon.",
+    "math_forms": [
+      "ds^2 = a^2(η)[-dη^2 + dχ^2 + f^2(χ)dΩ^2]",
+      "A_E = 4πH^(-2)",
+      "ρ_HM = 3 C^2 M_p^2 / L^2",
+      "L_f = a(t) ∫_t^∞ dt' / a(t')"
+    ],
+    "render_laws": [
+      "screen area changes active complexity",
+      "future horizons can control present fields",
+      "observer patch and global cosmology should be distinct",
+      "dark-radiation residue can carry early-universe memory"
+    ],
+    "parameters": [
+      "scaleFactor",
+      "hubbleRate",
+      "futureEventHorizon",
+      "screenAreaBudget",
+      "darkRadiationMix"
+    ],
+    "modules": [
+      "cosmology_state",
+      "cosmic_pressure",
+      "screen_stack"
+    ],
+    "motifs": [
+      "observer_patch_dome",
+      "twin_infinity_walls",
+      "future_horizon_pressure_sea",
+      "dark_radiation_residue",
+      "low_l_silence"
+    ],
+    "failure_modes": [
+      "fixed information budget in expanding scenes",
+      "no distinction between observer and global de Sitter",
+      "random fog instead of horizon-linked field"
+    ]
+  }
+]
+```
+
+---
+
+# `theory/visual_mappings.json`
+
+```json id="79y22t"
+[
+  {
+    "id": "surface_glyphshell",
+    "concepts": ["holographic_principle"],
+    "category": "encoding",
+    "shader_modules": ["shell_sdf", "glyph_uv", "source_field"],
+    "scene_roles": ["portrait", "object", "seed_surface"],
+    "preset_params": {
+      "shellGlow": 1.4,
+      "glyphDensity": 18.0,
+      "interiorOpacity": 0.15
+    },
+    "prompt_tokens": ["surface-encoded", "glyphshell", "hollow interior"]
+  },
+  {
+    "id": "ads_edge_saturation",
+    "concepts": ["ads_geometry_and_scale"],
+    "category": "scale",
+    "shader_modules": ["ads_spaces", "uv_ir_field"],
+    "scene_roles": ["tunnel", "cathedral", "zoom_space"],
+    "preset_params": {
+      "boundaryDepth": 0.03,
+      "warpIntensity": 1.15,
+      "uvIrMix": 0.8
+    },
+    "prompt_tokens": ["uv-ir depth", "recursive tunnel", "boundary saturation"]
+  },
+  {
+    "id": "light_sheet_hologram",
+    "concepts": ["light_sheets_and_screens"],
+    "category": "projection",
+    "shader_modules": ["light_sheet_field", "screen_sdfs"],
+    "scene_roles": ["scanner", "projection_scene", "reveal_sequence"],
+    "preset_params": {
+      "beamFocus": 7.5,
+      "sheetFalloff": 1.1,
+      "causticGain": 1.25
+    },
+    "prompt_tokens": ["light-sheet", "converging beams", "null scanfront"]
+  },
+  {
+    "id": "preferred_screen_membrane",
+    "concepts": ["light_sheets_and_screens"],
+    "category": "display_surface",
+    "shader_modules": ["screen_sdfs", "light_sheet_field"],
+    "scene_roles": ["display_plane", "membrane", "screen_stack"],
+    "preset_params": {
+      "screenThreshold": 0.03,
+      "preferredScreenBias": 1.6,
+      "screenOpacity": 0.22
+    },
+    "prompt_tokens": ["preferred screen", "projection membrane", "theta-zero surface"]
+  },
+  {
+    "id": "entanglement_filaments",
+    "concepts": ["entanglement_geometry"],
+    "category": "relation",
+    "shader_modules": ["entanglement_field", "entanglement_graphs"],
+    "scene_roles": ["pair_scene", "relation_map", "portrait_overlay"],
+    "preset_params": {
+      "threadDensity": 36,
+      "threadThickness": 0.018,
+      "entanglementWeight": 0.7
+    },
+    "prompt_tokens": ["entanglement filaments", "correlation threads", "light braids"]
+  },
+  {
+    "id": "rt_soap_film_bridge",
+    "concepts": ["entanglement_geometry"],
+    "category": "relation_geometry",
+    "shader_modules": ["membrane_sdfs", "entanglement_field"],
+    "scene_roles": ["bridge", "shared_chamber", "pair_scene"],
+    "preset_params": {
+      "bridgeThreshold": 0.45,
+      "rtTension": 0.72,
+      "membraneGlow": 1.28
+    },
+    "prompt_tokens": ["minimal surface", "soap-film bridge", "entanglement membrane"]
+  },
+  {
+    "id": "entanglement_tear",
+    "concepts": ["entanglement_geometry"],
+    "category": "failure",
+    "shader_modules": ["tear_field", "entanglement_field"],
+    "scene_roles": ["break_event", "disconnection", "scene_transition"],
+    "preset_params": {
+      "cutSeverity": 0.2,
+      "tearNoiseScale": 3.2,
+      "missingDataDarkness": 0.75
+    },
+    "prompt_tokens": ["entanglement tear", "ripped light fabric", "severed threads"]
+  },
+  {
+    "id": "horizon_glyphfire",
+    "concepts": ["black_holes_and_horizons"],
+    "category": "thermal_shell",
+    "shader_modules": ["blackhole_sdfs", "horizon_scramble", "photon_ring"],
+    "scene_roles": ["black_hole", "thermal_icon", "collapse_scene"],
+    "preset_params": {
+      "horizonRadius": 0.9,
+      "stretchedHorizonWidth": 0.06,
+      "thermalScramble": 0.85
+    },
+    "prompt_tokens": ["horizon glyphfire", "stretched horizon", "thermal membrane"]
+  },
+  {
+    "id": "infall_melt",
+    "concepts": ["black_holes_and_horizons"],
+    "category": "transition",
+    "shader_modules": ["horizon_scramble", "identity_loss"],
+    "scene_roles": ["infall_event", "assimilation", "collapse_transition"],
+    "preset_params": {
+      "identityLossSharpness": 0.8,
+      "shellAssimilation": 0.9,
+      "redshiftStrength": 0.4
+    },
+    "prompt_tokens": ["infall melt", "identity thermalization", "shell assimilation"]
+  },
+  {
+    "id": "precursor_ghost",
+    "concepts": ["nonlocality_and_smearing"],
+    "category": "nonlocal",
+    "shader_modules": ["precursor_field", "global_hidden_modes"],
+    "scene_roles": ["prophecy_scene", "early_event", "latent_chamber"],
+    "preset_params": {
+      "precursorWeight": 0.38,
+      "earlyKnowledgeGain": 0.55,
+      "ghostSpread": 0.7
+    },
+    "prompt_tokens": ["precursor ghost", "nonlocal aura", "too-early geometry"]
+  },
+  {
+    "id": "evanescent_blur_chamber",
+    "concepts": ["nonlocality_and_smearing"],
+    "category": "recoverability_limit",
+    "shader_modules": ["operator_smear", "coarse_grain_pass"],
+    "scene_roles": ["hidden_chamber", "barrier_scene", "probe_mode"],
+    "preset_params": {
+      "reconstructionSigma": 0.35,
+      "recoverableDepth": 0.35,
+      "evanescentWeight": 0.7
+    },
+    "prompt_tokens": ["evanescent blur", "hidden bulk swell", "STM reveal"]
+  },
+  {
+    "id": "responsibility_cloud",
+    "concepts": ["bulk_boundary_dictionary", "nonlocality_and_smearing"],
+    "category": "debug_ui",
+    "shader_modules": ["support_cloud_overlay", "boundary_encoders"],
+    "scene_roles": ["debug", "operator_scene", "educational_overlay"],
+    "preset_params": {
+      "supportRadius": 0.22,
+      "responsibilityGain": 1.0,
+      "arcGlow": 0.9
+    },
+    "prompt_tokens": ["responsibility cloud", "support arcs", "boundary ownership map"]
+  },
+  {
+    "id": "renormalized_boundary_fire",
+    "concepts": ["holographic_principle", "holographic_renormalization"],
+    "category": "boundary_response",
+    "shader_modules": ["renorm_field", "post_renorm_debug"],
+    "scene_roles": ["boundary_scene", "portrait_edge", "debug_pass"],
+    "preset_params": {
+      "shellDivergenceGain": 1.3,
+      "countertermStrength": 1.0,
+      "anomalyMix": 0.16
+    },
+    "prompt_tokens": ["renormalized boundary fire", "counterterm scars", "finite response"]
+  },
+  {
+    "id": "observer_patch_dome",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "cosmology",
+    "shader_modules": ["cosmology_state", "screen_stack", "observer_patch"],
+    "scene_roles": ["observer_cosmos", "finite_universe", "cosmic_portrait"],
+    "preset_params": {
+      "hubbleRate": 0.85,
+      "observerHorizonGain": 1.0,
+      "screenAreaBudget": 1.0
+    },
+    "prompt_tokens": ["observer patch", "de Sitter dome", "finite cosmic horizon"]
+  },
+  {
+    "id": "twin_infinity_walls",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "global_cosmology",
+    "shader_modules": ["global_screens", "screen_stack"],
+    "scene_roles": ["cosmic_hall", "temporal_mural", "universe_scene"],
+    "preset_params": {
+      "pastWallGlow": 0.9,
+      "futureWallGlow": 1.1,
+      "screenSeparation": 8.0
+    },
+    "prompt_tokens": ["past infinity wall", "future infinity wall", "global de Sitter screens"]
+  },
+  {
+    "id": "future_horizon_pressure_sea",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "cosmic_field",
+    "shader_modules": ["cosmic_pressure", "future_horizon_forecast"],
+    "scene_roles": ["cosmic_background", "dark_energy_field", "ambient_universe"],
+    "preset_params": {
+      "futureEventHorizon": 3.8,
+      "holographicMatterDensity": 0.22,
+      "teleologicalMix": 0.7
+    },
+    "prompt_tokens": ["future-horizon pressure", "dark energy field", "teleological glow"]
+  },
+  {
+    "id": "dark_radiation_residue",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "primordial_residue",
+    "shader_modules": ["cosmic_pressure", "dark_radiation_layer"],
+    "scene_roles": ["background_layer", "inflation_scene", "cosmic_memory"],
+    "preset_params": {
+      "darkRadiationMix": 0.14,
+      "primordialGrain": 0.18,
+      "epochFade": 0.6
+    },
+    "prompt_tokens": ["dark radiation residue", "primordial ash", "early-universe afterglow"]
+  },
+  {
+    "id": "low_l_silence",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "primordial_suppression",
+    "shader_modules": ["harmonic_cutoff", "cosmic_pressure"],
+    "scene_roles": ["inflation_scene", "cmb_ambient", "macro_void"],
+    "preset_params": {
+      "inflationCutoff": 0.22,
+      "cmbSuppressionBias": 0.5,
+      "macroVoidGain": 0.35
+    },
+    "prompt_tokens": ["missing harmonics", "cosmic silence", "low-l suppression"]
+  }
+]
+```
+
+---
+
+# `src/js/loadTheory.js`
+
+```js id="ndwwgm"
+export async function loadJson(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  return res.json();
+}
+
+export async function loadTheoryAssets() {
+  const [concepts, visualMappings] = await Promise.all([
+    loadJson("/theory/concepts.json"),
+    loadJson("/theory/visual_mappings.json")
+  ]);
+
+  const conceptMap = new Map(concepts.map((c) => [c.id, c]));
+  const motifMap = new Map(visualMappings.map((m) => [m.id, m]));
+
+  return { concepts, visualMappings, conceptMap, motifMap };
+}
+
+export function buildScenePreset(motifIds, assets) {
+  const modules = new Set();
+  const params = {};
+  const promptTokens = new Set();
+  const conceptIds = new Set();
+
+  for (const motifId of motifIds) {
+    const motif = assets.motifMap.get(motifId);
+    if (!motif) continue;
+
+    motif.shader_modules.forEach((m) => modules.add(m));
+    motif.concepts.forEach((c) => conceptIds.add(c));
+    Object.assign(params, motif.preset_params);
+    motif.prompt_tokens.forEach((t) => promptTokens.add(t));
+  }
+
+  return {
+    motifs: motifIds,
+    concepts: [...conceptIds],
+    modules: [...modules],
+    params,
+    promptTokens: [...promptTokens]
+  };
+}
+```
+
+---
+
+# `src/js/presets.js`
+
+```js id="6a2k39"
+export const scenePresets = {
+  glyphSaint: [
+    "surface_glyphshell",
+    "renormalized_boundary_fire"
+  ],
+  adsBasilica: [
+    "ads_edge_saturation",
+    "preferred_screen_membrane",
+    "caustic_cathedral"
+  ],
+  entropyLovers: [
+    "entanglement_filaments",
+    "rt_soap_film_bridge"
+  ],
+  blackSun: [
+    "horizon_glyphfire",
+    "infall_melt"
+  ],
+  precursorOracle: [
+    "precursor_ghost",
+    "responsibility_cloud"
+  ],
+  deSitterEye: [
+    "observer_patch_dome",
+    "future_horizon_pressure_sea"
+  ],
+  futureTide: [
+    "future_horizon_pressure_sea",
+    "dark_radiation_residue",
+    "low_l_silence"
+  ]
+};
+```
+
+---
+
+# `src/js/exampleBuildScene.js`
+
+```js id="6hi7dj"
+import { loadTheoryAssets, buildScenePreset } from "./loadTheory.js";
+import { scenePresets } from "./presets.js";
+
+export async function buildExampleScene(name = "blackSun") {
+  const assets = await loadTheoryAssets();
+  const motifIds = scenePresets[name];
+  if (!motifIds) throw new Error(`Unknown preset: ${name}`);
+
+  const preset = buildScenePreset(motifIds, assets);
+
+  return {
+    name,
+    ...preset,
+    reconstructionMode: preset.concepts.includes("nonlocality_and_smearing")
+      ? "precursor_assisted"
+      : "local_smear",
+    debugViews: [
+      "source",
+      "response",
+      "reconstruction_confidence"
+    ]
+  };
+}
+```
+
+---
+
+# What I’d do next
+
+The next strongest move is to start the first real shader scene templates:
+
+* `src/glsl/scenes/scene_surface_volume.glsl`
+* `src/glsl/scenes/scene_rt_surface.glsl`
+* `src/glsl/scenes/scene_horizon_hologram.glsl`
+
+I’d start with `scene_horizon_hologram.glsl`, because it pulls together:
+
+* shell SDF
+* AdS-ish depth logic
+* stretched horizon
+* scrambling
+* precursor residue
+* strong visual payoff fast
+
+Say **next** and I’ll write that file.
+
+Good. Here’s the first real scene template.
+
+This one is built to express the horizon logic we already defined:
+
+* entropy budget tied to horizon area
+* true horizon separated from stretched horizon
+* shell-local thermal scrambling
+* interior readout collapse
+* faint Hawking leakage
+* nonlocal precursor residue inside the hidden region
+
+That matches the black-hole/horizon logic from the source spine: black-hole entropy scales with horizon area, the stretched horizon is the operational membrane, and local reconstruction degrades in barrier/horizon backgrounds.   
+
+# `src/glsl/scenes/scene_horizon_hologram.glsl`
+
+```glsl id="4pjprw"
+// scene_horizon_hologram.glsl
+//
+// Purpose:
+// A flagship holographic black-hole scene template:
+// - true horizon vs stretched horizon
+// - shell-local glyphfire / thermal scrambling
+// - photon-ring accent
+// - infalling identity melt
+// - precursor residue in hidden region
+//
+// Assumes a generic raymarch pipeline with uniforms and helper fns.
+// Keep this file modular: include from your main fragment shader.
+
+#ifndef PI
+#define PI 3.14159265359
+#endif
+
+// -----------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------
+
+uniform float uTime;
+uniform vec2  uResolution;
+
+uniform vec3  uCamPos;
+uniform mat3  uCamBasis;
+
+// Core horizon controls
+uniform float uHorizonRadius;          // true horizon radius rs
+uniform float uStretchedWidth;         // stretched-horizon offset as fraction
+uniform float uThermalScramble;        // shell scrambling strength
+uniform float uHawkingGlow;            // sparse outgoing emission
+uniform float uPhotonRingGain;         // photon-ring accent
+uniform float uInteriorReadoutLoss;    // interior readability suppression
+uniform float uRedshiftStrength;       // shell spectral compression
+uniform float uShellGlyphDensity;      // shell glyph cell frequency
+uniform float uPrecursorWeight;        // hidden nonlocal residue
+uniform float uBoundaryDepth;          // optional AdS-ish boundary logic mix
+uniform float uWarpIntensity;          // optional warp intensity
+
+// Optional infall object controls
+uniform vec3  uInfallPos;
+uniform float uInfallRadius;
+uniform float uInfallEnable;           // 0 or 1
+
+// Optional debug view
+uniform int   uDebugMode;
+// 0 = beauty
+// 1 = true horizon
+// 2 = stretched horizon
+// 3 = scramble field
+// 4 = readout confidence
+// 5 = precursor field
+// 6 = photon ring
+
+// -----------------------------------------------------------------------------
+// Basic helpers
+// -----------------------------------------------------------------------------
+
+float saturate(float x) { return clamp(x, 0.0, 1.0); }
+
+float sdSphere(vec3 p, float r) {
+    return length(p) - r;
+}
+
+float hash21(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+float noise3(vec3 p) {
+    vec3 i = floor(p);
+    vec3 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+
+    float n000 = hash21(i.xy + i.z);
+    float n100 = hash21((i.xy + vec2(1.0, 0.0)) + i.z);
+    float n010 = hash21((i.xy + vec2(0.0, 1.0)) + i.z);
+    float n110 = hash21((i.xy + vec2(1.0, 1.0)) + i.z);
+
+    float n001 = hash21(i.xy + (i.z + 1.0));
+    float n101 = hash21((i.xy + vec2(1.0, 0.0)) + (i.z + 1.0));
+    float n011 = hash21((i.xy + vec2(0.0, 1.0)) + (i.z + 1.0));
+    float n111 = hash21((i.xy + vec2(1.0, 1.0)) + (i.z + 1.0));
+
+    float nx00 = mix(n000, n100, f.x);
+    float nx10 = mix(n010, n110, f.x);
+    float nx01 = mix(n001, n101, f.x);
+    float nx11 = mix(n011, n111, f.x);
+
+    float nxy0 = mix(nx00, nx10, f.y);
+    float nxy1 = mix(nx01, nx11, f.y);
+
+    return mix(nxy0, nxy1, f.z);
+}
+
+float fbm(vec3 p) {
+    float a = 0.5;
+    float s = 0.0;
+    for (int i = 0; i < 4; i++) {
+        s += a * noise3(p);
+        p *= 2.03;
+        a *= 0.5;
+    }
+    return s;
+}
+
+vec2 sphereUV(vec3 p) {
+    vec3 n = normalize(p);
+    float u = atan(n.z, n.x) / (2.0 * PI) + 0.5;
+    float v = acos(clamp(n.y, -1.0, 1.0)) / PI;
+    return vec2(u, v);
+}
+
+// -----------------------------------------------------------------------------
+// Optional AdS-ish warp for mild holographic depth flavor
+// -----------------------------------------------------------------------------
+
+float adsDepth(vec3 p) {
+    return max(0.03, p.y + 1.25);
+}
+
+vec3 adsWarp(vec3 p) {
+    float z = adsDepth(p);
+    float s = mix(1.0, 1.0 / z, uWarpIntensity);
+    return vec3(p.x * s, p.y, p.z * s);
+}
+
+// -----------------------------------------------------------------------------
+// Horizon layers
+// -----------------------------------------------------------------------------
+
+float trueHorizonField(vec3 p) {
+    float d = abs(sdSphere(p, uHorizonRadius));
+    return exp(-d * 140.0);
+}
+
+float stretchedHorizonField(vec3 p) {
+    float rs = uHorizonRadius * (1.0 + uStretchedWidth);
+    float d = abs(sdSphere(p, rs));
+    return exp(-d * 85.0);
+}
+
+float photonRingField(vec3 p) {
+    float r = length(p);
+    float ringR = 1.5 * uHorizonRadius;
+    return exp(-abs(r - ringR) * 22.0) * uPhotonRingGain;
+}
+
+float readoutConfidence(vec3 p) {
+    float r = length(p);
+    float conf = smoothstep(
+        uHorizonRadius * 1.15,
+        uHorizonRadius * 1.35,
+        r
+    );
+    return mix(conf, conf * conf, uInteriorReadoutLoss);
+}
+
+// -----------------------------------------------------------------------------
+// Shell glyphfire / thermal scrambling
+// -----------------------------------------------------------------------------
+
+float shellGlyphCells(vec3 p) {
+    vec2 uv = sphereUV(p);
+    vec2 g = uv * vec2(uShellGlyphDensity, uShellGlyphDensity * 0.65);
+
+    vec2 cell = floor(g);
+    vec2 f = fract(g) - 0.5;
+
+    float id = hash21(cell);
+    float gate = step(0.62, id);
+
+    float lineA = smoothstep(0.12, 0.0, abs(f.x));
+    float lineB = smoothstep(0.12, 0.0, abs(f.y));
+    float ring  = smoothstep(0.22, 0.18, abs(length(f) - 0.2));
+
+    float glyph = max(max(lineA, lineB * step(0.5, fract(id * 7.0))), ring);
+    return gate * glyph;
+}
+
+float thermalScrambleField(vec3 p) {
+    float sh = stretchedHorizonField(p);
+    vec3 q = normalize(p) * 4.0 + vec3(0.0, 0.0, uTime * 0.4);
+    float n = fbm(q * 2.1 + vec3(1.3, -0.5, 0.8));
+    float cells = shellGlyphCells(p);
+    float swirl = 0.5 + 0.5 * sin(18.0 * sphereUV(p).x + 7.0 * sphereUV(p).y + 1.8 * uTime);
+
+    float thermal = mix(n, max(cells, swirl), 0.45);
+    return sh * thermal * uThermalScramble;
+}
+
+// -----------------------------------------------------------------------------
+// Infall object and identity melt
+// -----------------------------------------------------------------------------
+
+float infallObjectSDF(vec3 p) {
+    return sdSphere(p - uInfallPos, uInfallRadius);
+}
+
+float infallIdentityLoss(vec3 p) {
+    float rs = uHorizonRadius * (1.0 + uStretchedWidth);
+    float d = abs(length(p) - rs);
+    float x = 1.0 - clamp(d / max(0.25 * rs, 1e-3), 0.0, 1.0);
+    return x * x;
+}
+
+// -----------------------------------------------------------------------------
+// Precursor residue: hidden, global, low-frequency interior field
+// -----------------------------------------------------------------------------
+
+float precursorField(vec3 p) {
+    float r = length(p);
+    float inside = 1.0 - smoothstep(uHorizonRadius * 0.95, uHorizonRadius * 1.25, r);
+
+    float lowA = 0.5 + 0.5 * sin(1.7 * p.x + 1.1 * p.y - 0.8 * p.z + 0.6 * uTime);
+    float lowB = 0.5 + 0.5 * sin(0.9 * r - 0.9 * uTime + 2.0 * atan(p.z, p.x));
+    float cloud = fbm(p * 0.9 + vec3(0.0, 0.0, uTime * 0.08));
+
+    return inside * (0.4 * lowA + 0.3 * lowB + 0.3 * cloud) * uPrecursorWeight;
+}
+
+// -----------------------------------------------------------------------------
+// Redshift-ish spectral shaping
+// -----------------------------------------------------------------------------
+
+vec3 applyRedshift(vec3 c, vec3 p) {
+    float r = length(p);
+    float g = sqrt(max(1e-4, 1.0 - uHorizonRadius / max(r, uHorizonRadius + 1e-4)));
+    float mixAmt = (1.0 - g) * uRedshiftStrength;
+
+    vec3 redshifted = vec3(
+        c.r + 0.15 * c.g,
+        0.72 * c.g,
+        0.45 * c.b
+    );
+
+    return mix(c, redshifted, clamp(mixAmt, 0.0, 1.0));
+}
+
+// -----------------------------------------------------------------------------
+// Scene SDF
+// -----------------------------------------------------------------------------
+
+struct Hit {
+    float d;
+    int materialId;
+};
+
+Hit sceneSDF(vec3 p) {
+    p = adsWarp(p);
+
+    Hit h;
+    h.d = 1e6;
+    h.materialId = 0;
+
+    float horizonOuter = sdSphere(p, uHorizonRadius * (1.0 + uStretchedWidth));
+    if (horizonOuter < h.d) {
+        h.d = horizonOuter;
+        h.materialId = 1;
+    }
+
+    if (uInfallEnable > 0.5) {
+        float infall = infallObjectSDF(p);
+        if (infall < h.d) {
+            h.d = infall;
+            h.materialId = 2;
+        }
+    }
+
+    return h;
+}
+
+vec3 estimateNormal(vec3 p) {
+    const vec2 e = vec2(0.001, 0.0);
+    return normalize(vec3(
+        sceneSDF(p + e.xyy).d - sceneSDF(p - e.xyy).d,
+        sceneSDF(p + e.yxy).d - sceneSDF(p - e.yxy).d,
+        sceneSDF(p + e.yyx).d - sceneSDF(p - e.yyx).d
+    ));
+}
+
+// -----------------------------------------------------------------------------
+// Field evaluation
+// -----------------------------------------------------------------------------
+
+struct FieldData {
+    float horizonTrue;
+    float horizonStretched;
+    float photonRing;
+    float scramble;
+    float precursor;
+    float readout;
+    float infallLoss;
+};
+
+FieldData evalFields(vec3 p) {
+    FieldData f;
+    f.horizonTrue      = trueHorizonField(p);
+    f.horizonStretched = stretchedHorizonField(p);
+    f.photonRing       = photonRingField(p);
+    f.scramble         = thermalScrambleField(p);
+    f.precursor        = precursorField(p);
+    f.readout          = readoutConfidence(p);
+    f.infallLoss       = (uInfallEnable > 0.5) ? infallIdentityLoss(p) : 0.0;
+    return f;
+}
+
+// -----------------------------------------------------------------------------
+// Emission / shading
+// -----------------------------------------------------------------------------
+
+vec3 horizonPalette(float x) {
+    vec3 cold = vec3(0.05, 0.16, 0.34);
+    vec3 hot  = vec3(0.40, 0.85, 1.35);
+    vec3 ash  = vec3(0.95, 0.78, 0.40);
+    return mix(cold, hot, smoothstep(0.15, 0.7, x)) + 0.15 * ash * pow(x, 4.0);
+}
+
+vec3 accumulateEmission(vec3 p, FieldData f) {
+    vec3 col = vec3(0.0);
+
+    // Stretched horizon glyphfire
+    vec3 shellCol = horizonPalette(f.scramble);
+    shellCol = applyRedshift(shellCol, p);
+    col += shellCol * (0.9 * f.horizonStretched + 0.55 * f.scramble);
+
+    // True horizon inner razor line
+    col += vec3(0.25, 0.65, 1.2) * f.horizonTrue * 0.4;
+
+    // Photon ring
+    col += vec3(0.6, 0.8, 1.1) * f.photonRing * 0.55;
+
+    // Sparse Hawking flecks
+    float flick = 0.5 + 0.5 * cos(7.0 * uTime + 20.0 * length(p));
+    float sparse = pow(flick, 7.0);
+    col += vec3(0.12, 0.22, 0.36) * uHawkingGlow * sparse * f.horizonStretched;
+
+    // Hidden precursor residue inside
+    col += vec3(0.18, 0.10, 0.32) * f.precursor * (1.0 - f.readout) * 0.8;
+
+    return col;
+}
+
+vec3 shadeSurface(vec3 p, vec3 rd, Hit hit, FieldData f) {
+    vec3 n = estimateNormal(p);
+    vec3 l = normalize(vec3(0.5, 0.8, -0.7));
+    float ndl = 0.5 + 0.5 * dot(n, l);
+    float rim = pow(1.0 - max(0.0, dot(n, -rd)), 2.2);
+
+    if (hit.materialId == 1) {
+        vec3 base = horizonPalette(f.scramble + 0.2 * rim);
+        base = applyRedshift(base, p);
+
+        vec3 surf = base * (0.35 + 0.65 * ndl);
+        surf += vec3(0.15, 0.45, 0.95) * rim * 0.6;
+        surf += vec3(0.1, 0.2, 0.35) * f.photonRing * 0.4;
+        return surf;
+    }
+
+    if (hit.materialId == 2) {
+        float melt = f.infallLoss;
+        vec3 clean = vec3(0.85, 0.78, 0.95) * (0.3 + 0.7 * ndl);
+        vec3 melted = mix(
+            vec3(0.2, 0.4, 0.9),
+            horizonPalette(f.scramble + 0.2),
+            0.7
+        );
+        return mix(clean, melted, melt);
+    }
+
+    return vec3(0.0);
+}
+
+// -----------------------------------------------------------------------------
+// Raymarch
+// -----------------------------------------------------------------------------
+
+float stepRule(vec3 p, float sdfD, FieldData f) {
+    float base = clamp(0.12 * adsDepth(p), 0.02, 0.25);
+
+    float shellPenalty = mix(1.0, 0.35, saturate(f.horizonStretched + f.scramble));
+    float hiddenPenalty = mix(1.0, 0.6, 1.0 - f.readout);
+
+    return max(0.002, sdfD * base * shellPenalty * hiddenPenalty);
+}
+
+vec3 background(vec3 rd) {
+    float v = 0.5 + 0.5 * rd.y;
+    vec3 bg = mix(vec3(0.01, 0.015, 0.03), vec3(0.03, 0.05, 0.08), v);
+    float stars = pow(hash21(floor(rd.xy * 140.0)), 48.0);
+    return bg + 0.2 * stars;
+}
+
+vec3 debugColor(FieldData f) {
+    if (uDebugMode == 1) return vec3(f.horizonTrue);
+    if (uDebugMode == 2) return vec3(f.horizonStretched);
+    if (uDebugMode == 3) return vec3(f.scramble);
+    if (uDebugMode == 4) return vec3(f.readout);
+    if (uDebugMode == 5) return vec3(f.precursor);
+    if (uDebugMode == 6) return vec3(f.photonRing);
+    return vec3(0.0);
+}
+
+vec3 render(vec3 ro, vec3 rd) {
+    float t = 0.0;
+    vec3 color = vec3(0.0);
+
+    for (int i = 0; i < 160; i++) {
+        vec3 p = ro + rd * t;
+        Hit h = sceneSDF(p);
+        FieldData f = evalFields(p);
+
+        if (uDebugMode != 0) {
+            color += 0.045 * debugColor(f);
+        } else {
+            color += 0.04 * accumulateEmission(p, f);
+        }
+
+        if (h.d < 0.0015) {
+            if (uDebugMode == 0) {
+                color += shadeSurface(p, rd, h, f);
+            }
+            break;
+        }
+
+        t += stepRule(p, h.d, f);
+        if (t > 16.0) {
+            color += background(rd);
+            break;
+        }
+    }
+
+    return color;
+}
+
+// -----------------------------------------------------------------------------
+// Entry
+// -----------------------------------------------------------------------------
+
+vec3 getRayDir(vec2 fragCoord) {
+    vec2 uv = (2.0 * fragCoord - uResolution) / min(uResolution.x, uResolution.y);
+    return normalize(uCamBasis * normalize(vec3(uv, 1.8)));
+}
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+    vec3 ro = uCamPos;
+    vec3 rd = getRayDir(fragCoord);
+
+    vec3 col = render(ro, rd);
+
+    // Simple filmic-ish tone + gamma
+    col = col / (1.0 + col);
+    col = pow(col, vec3(0.4545));
+
+    fragColor = vec4(col, 1.0);
+}
+```
+
+---
+
+# Minimal JS hookup
+
+## `src/js/scene_horizon_hologram.js`
+
+```js id="um2jtn"
+export function getHorizonHologramUniforms(time, resolution) {
+  return {
+    uTime: time,
+    uResolution: resolution,
+
+    uCamPos: [0.0, 0.2, -4.2],
+    uCamBasis: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1
+    ],
+
+    uHorizonRadius: 0.95,
+    uStretchedWidth: 0.065,
+    uThermalScramble: 0.95,
+    uHawkingGlow: 0.22,
+    uPhotonRingGain: 0.55,
+    uInteriorReadoutLoss: 0.9,
+    uRedshiftStrength: 0.6,
+    uShellGlyphDensity: 22.0,
+    uPrecursorWeight: 0.28,
+    uBoundaryDepth: 0.03,
+    uWarpIntensity: 0.15,
+
+    uInfallPos: [1.25 - 0.2 * time, 0.15, 0.0],
+    uInfallRadius: 0.26,
+    uInfallEnable: 1.0,
+
+    uDebugMode: 0
+  };
+}
+```
+
+---
+
+# How to read this scene
+
+## What is physically translated here
+
+The shell is doing the real work:
+
+* the **true horizon** is the logic boundary
+* the **stretched horizon** is the visible membrane
+* shell-local texture becomes **thermal scrambling / glyphfire**
+* the inside is not “empty art space,” it has only **low-confidence nonlocal residue**
+
+That matches the black-hole complementarity / stretched-horizon style picture much better than “sphere with glow.”  
+
+## What is artistically faked on purpose
+
+This is **not** a GR-accurate lensing solver.
+The photon ring and redshift are stylized approximations to get the right render behavior fast.
+
+## What you should tune first
+
+Start with:
+
+* `uHorizonRadius`
+* `uStretchedWidth`
+* `uThermalScramble`
+* `uShellGlyphDensity`
+* `uPrecursorWeight`
+* `uPhotonRingGain`
+
+Those six parameters basically set the whole vibe.
+
+---
+
+# Good next variants
+
+## Variant A — “Black Sun”
+
+Turn off infall, push shell glyph density up, lower Hawking glow, stronger photon ring.
+
+## Variant B — “Sacrifice”
+
+Keep infall enabled, animate `uInfallPos` across the shell, raise `uThermalScramble`, lower `uPrecursorWeight`.
+
+## Variant C — “Interior Oracle”
+
+Lower shell brightness, increase precursor, lower readout confidence, make interior feel like hidden nonlocal thought.
+
+---
+
+# Best next file
+
+The cleanest follow-up is:
+
+`src/glsl/scenes/scene_rt_surface.glsl`
+
+because that gives you the entanglement counterpart to this horizon scene:
+
+* two anchors
+* membrane bridge
+* connected/disconnected phase
+* tear logic
+* wedge glow
+
+Say **next** and I’ll write that one.
+Perfect. Here’s the entanglement counterpart.
+
+This scene is built around the static RT logic: a pair of boundary anchors, a membrane-like bridge that appears when shared information crosses a threshold, and a tear field that takes over when the connected phase loses. In the source spine, entanglement entropy in static holographic settings is computed by a bulk minimal surface, and mutual information controls when connected vs disconnected configurations are favored.  
+
+# `src/glsl/scenes/scene_rt_surface.glsl`
+
+```glsl id="tns7sv"
+// scene_rt_surface.glsl
+//
+// Static holographic entanglement scene template:
+// - two boundary/source anchors
+// - wedge fields
+// - connected/disconnected bridge phase
+// - RT-style membrane bridge
+// - tear logic when relation weakens
+//
+// Stylized, not a literal extremal-surface solver.
+
+#ifndef PI
+#define PI 3.14159265359
+#endif
+
+// -----------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------
+
+uniform float uTime;
+uniform vec2  uResolution;
+
+uniform vec3  uCamPos;
+uniform mat3  uCamBasis;
+
+// Anchor regions
+uniform vec3  uAnchorA;
+uniform vec3  uAnchorB;
+uniform float uAnchorRadius;
+
+// Entanglement / RT controls
+uniform float uEntanglementWeight;   // 0..1-ish
+uniform float uBridgeThreshold;      // transition threshold
+uniform float uRTTension;            // bridge thinning / saddle tension
+uniform float uSharedInteriorWeight; // wedge overlap glow
+uniform float uDisconnectSharpness;  // how sharply bridge fails
+uniform float uMembraneGlow;         // membrane brightness
+uniform float uThreadGain;           // filament brightness
+uniform float uCutSeverity;          // tear severity
+
+// Atmosphere
+uniform float uBoundaryDepth;
+uniform float uWarpIntensity;
+uniform float uScreenBloom;
+
+// Debug
+uniform int uDebugMode;
+// 0 beauty
+// 1 wedge A
+// 2 wedge B
+// 3 overlap
+// 4 bridge phase
+// 5 tear field
+// 6 filament field
+
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
+
+float saturate(float x) { return clamp(x, 0.0, 1.0); }
+
+float sdSphere(vec3 p, float r) {
+    return length(p) - r;
+}
+
+float smin(float a, float b, float k) {
+    float h = saturate(0.5 + 0.5 * (b - a) / k);
+    return mix(b, a, h) - k * h * (1.0 - h);
+}
+
+float hash21(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+float noise3(vec3 p) {
+    vec3 i = floor(p);
+    vec3 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+
+    float n000 = hash21(i.xy + i.z);
+    float n100 = hash21((i.xy + vec2(1.0, 0.0)) + i.z);
+    float n010 = hash21((i.xy + vec2(0.0, 1.0)) + i.z);
+    float n110 = hash21((i.xy + vec2(1.0, 1.0)) + i.z);
+
+    float n001 = hash21(i.xy + (i.z + 1.0));
+    float n101 = hash21((i.xy + vec2(1.0, 0.0)) + (i.z + 1.0));
+    float n011 = hash21((i.xy + vec2(0.0, 1.0)) + (i.z + 1.0));
+    float n111 = hash21((i.xy + vec2(1.0, 1.0)) + (i.z + 1.0));
+
+    float nx00 = mix(n000, n100, f.x);
+    float nx10 = mix(n010, n110, f.x);
+    float nx01 = mix(n001, n101, f.x);
+    float nx11 = mix(n011, n111, f.x);
+
+    float nxy0 = mix(nx00, nx10, f.y);
+    float nxy1 = mix(nx01, nx11, f.y);
+
+    return mix(nxy0, nxy1, f.z);
+}
+
+float fbm(vec3 p) {
+    float a = 0.5;
+    float s = 0.0;
+    for (int i = 0; i < 4; i++) {
+        s += a * noise3(p);
+        p *= 2.02;
+        a *= 0.5;
+    }
+    return s;
+}
+
+// -----------------------------------------------------------------------------
+// Mild AdS-ish warp
+// -----------------------------------------------------------------------------
+
+float adsDepth(vec3 p) {
+    return max(0.03, p.y + 1.4);
+}
+
+vec3 adsWarp(vec3 p) {
+    float z = adsDepth(p);
+    float s = mix(1.0, 1.0 / z, uWarpIntensity);
+    return vec3(p.x * s, p.y, p.z * s);
+}
+
+// -----------------------------------------------------------------------------
+// Wedge fields
+// -----------------------------------------------------------------------------
+
+float wedgeField(vec3 p, vec3 anchor, vec3 inwardDir, float depth, float spread) {
+    vec3 q = p - anchor;
+    float axial = dot(q, inwardDir);
+    float lateral = length(q - axial * inwardDir);
+
+    float core = exp(-abs(axial - 0.55 * depth) * 1.4);
+    float fan  = exp(-lateral * spread);
+
+    return fan * core * step(0.0, axial) * step(axial, depth);
+}
+
+vec3 inwardDirForAnchor(vec3 a) {
+    // inward toward scene center, with slight upward bias
+    vec3 dir = normalize(-a + vec3(0.0, 0.35, 0.0));
+    return dir;
+}
+
+// -----------------------------------------------------------------------------
+// Bridge phase
+// -----------------------------------------------------------------------------
+
+float bridgeStrength() {
+    float x = (uEntanglementWeight - uBridgeThreshold) / max(0.001, uDisconnectSharpness);
+    return 1.0 / (1.0 + exp(-x));
+}
+
+// -----------------------------------------------------------------------------
+// Membrane bridge
+// -----------------------------------------------------------------------------
+
+float membraneBridgeSDF(vec3 p, vec3 a, vec3 b, float phase, float tension) {
+    vec3 ab = b - a;
+    float len = max(length(ab), 1e-4);
+    vec3 dir = ab / len;
+
+    vec3 mid = 0.5 * (a + b);
+    vec3 rel = p - mid;
+
+    float axial = dot(rel, dir);
+    vec3 perp = rel - axial * dir;
+    float lateral = length(perp);
+
+    float spanMask = smoothstep(0.65 * len, 0.35 * len, abs(axial));
+
+    // saddle / soap-film-ish thickness
+    float baseThickness = mix(0.18, 0.035, tension);
+    float pinch = 1.0 - 0.55 * cos(PI * axial / len);
+    float thickness = mix(baseThickness, baseThickness * 0.55, phase) * pinch;
+
+    // slight membrane undulation
+    float und = 0.015 * sin(8.0 * axial / len + 1.5 * uTime);
+    float d = lateral - (thickness + und);
+
+    // gate by phase and span
+    d += (1.0 - phase) * 0.5;
+    d += (1.0 - spanMask) * 0.15;
+
+    return d;
+}
+
+// -----------------------------------------------------------------------------
+// Filaments
+// -----------------------------------------------------------------------------
+
+float filamentField(vec3 p, vec3 a, vec3 b, float phase) {
+    vec3 ab = b - a;
+    float len = max(length(ab), 1e-4);
+    vec3 dir = normalize(ab);
+
+    vec3 rel = p - a;
+    float axial = clamp(dot(rel, dir), 0.0, len);
+    vec3 proj = a + dir * axial;
+
+    float d = length(p - proj);
+
+    float strands = 0.5 + 0.5 * sin(18.0 * axial / len + 12.0 * atan(p.z - proj.z, p.y - proj.y));
+    float envelope = exp(-d * 18.0);
+
+    return phase * envelope * strands;
+}
+
+// -----------------------------------------------------------------------------
+// Tear field
+// -----------------------------------------------------------------------------
+
+float tearField(vec3 p, vec3 a, vec3 b, float phase) {
+    vec3 mid = 0.5 * (a + b);
+    vec3 ab = normalize(b - a);
+    vec3 rel = p - mid;
+
+    float axial = dot(rel, ab);
+    float side = length(rel - axial * ab);
+
+    float n = fbm(p * 2.6 + vec3(0.0, 0.0, uTime * 0.1));
+    float instability = (1.0 - phase) * uCutSeverity;
+
+    float seam = exp(-side * 10.0) * smoothstep(0.7, 0.2, abs(axial));
+    return seam * smoothstep(0.45 - instability, 0.55 + instability, n);
+}
+
+// -----------------------------------------------------------------------------
+// Source anchors / shell-ish nodes
+// -----------------------------------------------------------------------------
+
+float anchorGlow(vec3 p, vec3 anchor) {
+    float d = abs(sdSphere(p - anchor, uAnchorRadius));
+    return exp(-d * 35.0);
+}
+
+float anchorGlyph(vec3 p, vec3 anchor) {
+    vec3 q = normalize(p - anchor);
+    float u = atan(q.z, q.x) / (2.0 * PI) + 0.5;
+    float v = acos(clamp(q.y, -1.0, 1.0)) / PI;
+
+    vec2 g = vec2(u, v) * vec2(16.0, 10.0);
+    vec2 f = fract(g) - 0.5;
+    vec2 cell = floor(g);
+
+    float id = hash21(cell);
+    float lineA = smoothstep(0.14, 0.0, abs(f.x));
+    float lineB = smoothstep(0.14, 0.0, abs(f.y));
+    float ring  = smoothstep(0.25, 0.2, abs(length(f) - 0.23));
+
+    float glyph = max(lineA * step(0.4, id), max(lineB * step(0.7, fract(id * 9.0)), ring));
+    return anchorGlow(p, anchor) * glyph;
+}
+
+// -----------------------------------------------------------------------------
+// Scene SDF
+// -----------------------------------------------------------------------------
+
+struct Hit {
+    float d;
+    int materialId;
+};
+
+Hit sceneSDF(vec3 p) {
+    p = adsWarp(p);
+
+    Hit h;
+    h.d = 1e6;
+    h.materialId = 0;
+
+    float a = sdSphere(p - uAnchorA, uAnchorRadius);
+    float b = sdSphere(p - uAnchorB, uAnchorRadius);
+
+    float anchors = smin(a, b, 0.18);
+    if (anchors < h.d) {
+        h.d = anchors;
+        h.materialId = 1;
+    }
+
+    float phase = bridgeStrength();
+    float bridge = membraneBridgeSDF(p, uAnchorA, uAnchorB, phase, uRTTension);
+    if (bridge < h.d) {
+        h.d = bridge;
+        h.materialId = 2;
+    }
+
+    return h;
+}
+
+vec3 estimateNormal(vec3 p) {
+    const vec2 e = vec2(0.001, 0.0);
+    return normalize(vec3(
+        sceneSDF(p + e.xyy).d - sceneSDF(p - e.xyy).d,
+        sceneSDF(p + e.yxy).d - sceneSDF(p - e.yxy).d,
+        sceneSDF(p + e.yyx).d - sceneSDF(p - e.yyx).d
+    ));
+}
+
+// -----------------------------------------------------------------------------
+// Field eval
+// -----------------------------------------------------------------------------
+
+struct FieldData {
+    float wedgeA;
+    float wedgeB;
+    float overlap;
+    float phase;
+    float tear;
+    float filaments;
+    float anchorA;
+    float anchorB;
+};
+
+FieldData evalFields(vec3 p) {
+    vec3 pa = adsWarp(p);
+
+    vec3 dirA = inwardDirForAnchor(uAnchorA);
+    vec3 dirB = inwardDirForAnchor(uAnchorB);
+
+    FieldData f;
+    f.wedgeA = wedgeField(pa, uAnchorA, dirA, 2.6, 2.4);
+    f.wedgeB = wedgeField(pa, uAnchorB, dirB, 2.6, 2.4);
+    f.overlap = f.wedgeA * f.wedgeB * uSharedInteriorWeight;
+    f.phase = bridgeStrength();
+    f.tear = tearField(pa, uAnchorA, uAnchorB, f.phase);
+    f.filaments = filamentField(pa, uAnchorA, uAnchorB, f.phase) * uThreadGain;
+    f.anchorA = anchorGlyph(pa, uAnchorA);
+    f.anchorB = anchorGlyph(pa, uAnchorB);
+    return f;
+}
+
+// -----------------------------------------------------------------------------
+// Shading
+// -----------------------------------------------------------------------------
+
+vec3 anchorPalette(float x) {
+    vec3 a = vec3(0.16, 0.55, 1.1);
+    vec3 b = vec3(0.72, 0.28, 1.25);
+    vec3 c = vec3(1.0, 0.82, 0.45);
+    return mix(a, b, smoothstep(0.2, 0.75, x)) + 0.12 * c * pow(x, 5.0);
+}
+
+vec3 membranePalette(float x) {
+    vec3 cold = vec3(0.10, 0.35, 0.9);
+    vec3 hot  = vec3(0.85, 0.35, 1.15);
+    return mix(cold, hot, smoothstep(0.15, 0.85, x));
+}
+
+vec3 accumulateEmission(vec3 p, FieldData f) {
+    vec3 col = vec3(0.0);
+
+    col += anchorPalette(f.anchorA) * (0.5 * f.anchorA);
+    col += anchorPalette(f.anchorB) * (0.5 * f.anchorB);
+
+    col += vec3(0.22, 0.45, 0.95) * (f.wedgeA * 0.06 + f.wedgeB * 0.06);
+    col += vec3(0.42, 0.18, 0.82) * f.overlap * 0.22;
+
+    col += vec3(0.55, 0.85, 1.1) * f.filaments * 0.15;
+
+    // Tear darkens / subtracts coherent bridge light
+    col -= vec3(0.16, 0.08, 0.22) * f.tear * 0.22;
+
+    return max(col, 0.0);
+}
+
+vec3 shadeSurface(vec3 p, vec3 rd, Hit hit, FieldData f) {
+    vec3 n = estimateNormal(p);
+    vec3 l = normalize(vec3(0.4, 0.8, -0.6));
+    float ndl = 0.5 + 0.5 * dot(n, l);
+    float rim = pow(1.0 - max(0.0, dot(n, -rd)), 2.5);
+
+    if (hit.materialId == 1) {
+        float g = max(f.anchorA, f.anchorB);
+        vec3 c = anchorPalette(g);
+        c *= (0.35 + 0.65 * ndl);
+        c += vec3(0.2, 0.5, 1.1) * rim * 0.5;
+        return c;
+    }
+
+    if (hit.materialId == 2) {
+        float m = f.phase * (1.0 - 0.75 * f.tear);
+        vec3 c = membranePalette(m);
+        c *= (0.3 + 0.7 * ndl);
+        c += vec3(0.9, 0.95, 1.0) * rim * 0.25 * uMembraneGlow;
+        c += vec3(0.5, 0.15, 0.75) * f.overlap * 0.3;
+        return c;
+    }
+
+    return vec3(0.0);
+}
+
+// -----------------------------------------------------------------------------
+// Raymarch
+// -----------------------------------------------------------------------------
+
+float stepRule(vec3 p, float sdfD, FieldData f) {
+    float zScale = clamp(0.16 * adsDepth(p), 0.02, 0.25);
+    float membranePenalty = mix(1.0, 0.4, f.phase * (0.4 + 0.6 * f.overlap));
+    return max(0.002, sdfD * zScale * membranePenalty);
+}
+
+vec3 background(vec3 rd) {
+    float v = 0.5 + 0.5 * rd.y;
+    vec3 bg = mix(vec3(0.012, 0.015, 0.028), vec3(0.05, 0.04, 0.08), v);
+    float stars = pow(hash21(floor(rd.xy * 180.0)), 64.0);
+    return bg + 0.1 * stars;
+}
+
+vec3 debugColor(FieldData f) {
+    if (uDebugMode == 1) return vec3(f.wedgeA);
+    if (uDebugMode == 2) return vec3(f.wedgeB);
+    if (uDebugMode == 3) return vec3(f.overlap);
+    if (uDebugMode == 4) return vec3(f.phase);
+    if (uDebugMode == 5) return vec3(f.tear);
+    if (uDebugMode == 6) return vec3(f.filaments);
+    return vec3(0.0);
+}
+
+vec3 render(vec3 ro, vec3 rd) {
+    float t = 0.0;
+    vec3 color = vec3(0.0);
+
+    for (int i = 0; i < 170; i++) {
+        vec3 p = ro + rd * t;
+        Hit h = sceneSDF(p);
+        FieldData f = evalFields(p);
+
+        if (uDebugMode != 0) {
+            color += 0.045 * debugColor(f);
+        } else {
+            color += 0.035 * accumulateEmission(p, f);
+        }
+
+        if (h.d < 0.0015) {
+            if (uDebugMode == 0) {
+                color += shadeSurface(p, rd, h, f);
+            }
+            break;
+        }
+
+        t += stepRule(p, h.d, f);
+        if (t > 18.0) {
+            color += background(rd);
+            break;
+        }
+    }
+
+    return color;
+}
+
+// -----------------------------------------------------------------------------
+// Entry
+// -----------------------------------------------------------------------------
+
+vec3 getRayDir(vec2 fragCoord) {
+    vec2 uv = (2.0 * fragCoord - uResolution) / min(uResolution.x, uResolution.y);
+    return normalize(uCamBasis * normalize(vec3(uv, 1.9)));
+}
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+    vec3 ro = uCamPos;
+    vec3 rd = getRayDir(fragCoord);
+
+    vec3 col = render(ro, rd);
+
+    // soft bloom-ish lift
+    col += uScreenBloom * 0.03 * col * col;
+
+    // tonemap / gamma
+    col = col / (1.0 + col);
+    col = pow(col, vec3(0.4545));
+
+    fragColor = vec4(col, 1.0);
+}
+```
+
+---
+
+# Minimal JS hookup
+
+## `src/js/scene_rt_surface.js`
+
+```js id="p5abpo"
+export function getRTSurfaceUniforms(time, resolution) {
+  return {
+    uTime: time,
+    uResolution: resolution,
+
+    uCamPos: [0.0, 0.15, -4.4],
+    uCamBasis: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1
+    ],
+
+    uAnchorA: [-1.25, 0.0, 0.0],
+    uAnchorB: [ 1.25, 0.0, 0.0],
+    uAnchorRadius: 0.34,
+
+    uEntanglementWeight: 0.78,
+    uBridgeThreshold: 0.44,
+    uRTTension: 0.72,
+    uSharedInteriorWeight: 0.72,
+    uDisconnectSharpness: 0.16,
+    uMembraneGlow: 1.3,
+    uThreadGain: 0.9,
+    uCutSeverity: 0.18,
+
+    uBoundaryDepth: 0.03,
+    uWarpIntensity: 0.12,
+    uScreenBloom: 0.9,
+
+    uDebugMode: 0
+  };
+}
+```
+
+---
+
+# Best things to animate
+
+## 1. Phase transition
+
+Animate `uEntanglementWeight` across `uBridgeThreshold`.
+
+That gives you the signature holographic switch:
+
+* below threshold: two separate anchor regions
+* near threshold: unstable bridge
+* above threshold: shared membrane chamber
+
+## 2. Tear event
+
+Raise `uCutSeverity` while dropping `uEntanglementWeight`.
+
+That makes the bridge feel like it is **structurally failing**, not just fading.
+
+## 3. Shared interior swell
+
+Increase `uSharedInteriorWeight` after connection.
+
+That makes the bulk between anchors glow like a jointly owned wedge.
+
+---
+
+# Debug views worth using
+
+* `1` wedge A
+* `2` wedge B
+* `3` overlap
+* `4` bridge phase
+* `5` tear field
+* `6` filaments
+
+Those are actually useful here, because this scene can otherwise look “pretty” even when the relation logic is wrong.
+
+---
+
+# What this scene is doing conceptually
+
+This is not a literal minimal-surface solver.
+It is a **minimal-surface-inspired membrane phase system**:
+
+* anchors behave like boundary regions
+* the bridge appears only when relation weight is strong enough
+* overlap glows like shared interior ownership
+* failure manifests as a tear, not a mere opacity fade
+
+That is the right fake for RT art code.
+
+---
+
+# Best next file
+
+The strongest third scene template is:
+
+`src/glsl/scenes/scene_light_sheet_screen.glsl`
+
+because then you’ll have the three major pillars:
+
+* horizon membrane
+* entanglement membrane
+* null-projection screen stack
+
+Say **next** and I’ll write that one.
 
