@@ -1,3 +1,5 @@
+(picks up RIGHT AFTER PART ONE CUT OFF - i think i cut off halfway thru a code snippet or something my apologies please stitch it back together right):
+
 export function selectReconstructionMode(flags) {
   if (flags.hasTrappedGeodesics || flags.hasStrongEvanescence) {
     return "coarse_grained";
