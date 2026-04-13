@@ -1,0 +1,236 @@
+[
+  {
+    "id": "surface_glyphshell",
+    "concepts": ["holographic_principle"],
+    "category": "encoding",
+    "shader_modules": ["shell_sdf", "glyph_uv", "source_field"],
+    "scene_roles": ["portrait", "object", "seed_surface"],
+    "preset_params": {
+      "shellGlow": 1.4,
+      "glyphDensity": 18.0,
+      "interiorOpacity": 0.15
+    },
+    "prompt_tokens": ["surface-encoded", "glyphshell", "hollow interior"]
+  },
+  {
+    "id": "ads_edge_saturation",
+    "concepts": ["ads_geometry_and_scale"],
+    "category": "scale",
+    "shader_modules": ["ads_spaces", "uv_ir_field"],
+    "scene_roles": ["tunnel", "cathedral", "zoom_space"],
+    "preset_params": {
+      "boundaryDepth": 0.03,
+      "warpIntensity": 1.15,
+      "uvIrMix": 0.8
+    },
+    "prompt_tokens": ["uv-ir depth", "recursive tunnel", "boundary saturation"]
+  },
+  {
+    "id": "light_sheet_hologram",
+    "concepts": ["light_sheets_and_screens"],
+    "category": "projection",
+    "shader_modules": ["light_sheet_field", "screen_sdfs"],
+    "scene_roles": ["scanner", "projection_scene", "reveal_sequence"],
+    "preset_params": {
+      "beamFocus": 7.5,
+      "sheetFalloff": 1.1,
+      "causticGain": 1.25
+    },
+    "prompt_tokens": ["light-sheet", "converging beams", "null scanfront"]
+  },
+  {
+    "id": "preferred_screen_membrane",
+    "concepts": ["light_sheets_and_screens"],
+    "category": "display_surface",
+    "shader_modules": ["screen_sdfs", "light_sheet_field"],
+    "scene_roles": ["display_plane", "membrane", "screen_stack"],
+    "preset_params": {
+      "screenThreshold": 0.03,
+      "preferredScreenBias": 1.6,
+      "screenOpacity": 0.22
+    },
+    "prompt_tokens": ["preferred screen", "projection membrane", "theta-zero surface"]
+  },
+  {
+    "id": "entanglement_filaments",
+    "concepts": ["entanglement_geometry"],
+    "category": "relation",
+    "shader_modules": ["entanglement_field", "entanglement_graphs"],
+    "scene_roles": ["pair_scene", "relation_map", "portrait_overlay"],
+    "preset_params": {
+      "threadDensity": 36,
+      "threadThickness": 0.018,
+      "entanglementWeight": 0.7
+    },
+    "prompt_tokens": ["entanglement filaments", "correlation threads", "light braids"]
+  },
+  {
+    "id": "rt_soap_film_bridge",
+    "concepts": ["entanglement_geometry"],
+    "category": "relation_geometry",
+    "shader_modules": ["membrane_sdfs", "entanglement_field"],
+    "scene_roles": ["bridge", "shared_chamber", "pair_scene"],
+    "preset_params": {
+      "bridgeThreshold": 0.45,
+      "rtTension": 0.72,
+      "membraneGlow": 1.28
+    },
+    "prompt_tokens": ["minimal surface", "soap-film bridge", "entanglement membrane"]
+  },
+  {
+    "id": "entanglement_tear",
+    "concepts": ["entanglement_geometry"],
+    "category": "failure",
+    "shader_modules": ["tear_field", "entanglement_field"],
+    "scene_roles": ["break_event", "disconnection", "scene_transition"],
+    "preset_params": {
+      "cutSeverity": 0.2,
+      "tearNoiseScale": 3.2,
+      "missingDataDarkness": 0.75
+    },
+    "prompt_tokens": ["entanglement tear", "ripped light fabric", "severed threads"]
+  },
+  {
+    "id": "horizon_glyphfire",
+    "concepts": ["black_holes_and_horizons"],
+    "category": "thermal_shell",
+    "shader_modules": ["blackhole_sdfs", "horizon_scramble", "photon_ring"],
+    "scene_roles": ["black_hole", "thermal_icon", "collapse_scene"],
+    "preset_params": {
+      "horizonRadius": 0.9,
+      "stretchedHorizonWidth": 0.06,
+      "thermalScramble": 0.85
+    },
+    "prompt_tokens": ["horizon glyphfire", "stretched horizon", "thermal membrane"]
+  },
+  {
+    "id": "infall_melt",
+    "concepts": ["black_holes_and_horizons"],
+    "category": "transition",
+    "shader_modules": ["horizon_scramble", "identity_loss"],
+    "scene_roles": ["infall_event", "assimilation", "collapse_transition"],
+    "preset_params": {
+      "identityLossSharpness": 0.8,
+      "shellAssimilation": 0.9,
+      "redshiftStrength": 0.4
+    },
+    "prompt_tokens": ["infall melt", "identity thermalization", "shell assimilation"]
+  },
+  {
+    "id": "precursor_ghost",
+    "concepts": ["nonlocality_and_smearing"],
+    "category": "nonlocal",
+    "shader_modules": ["precursor_field", "global_hidden_modes"],
+    "scene_roles": ["prophecy_scene", "early_event", "latent_chamber"],
+    "preset_params": {
+      "precursorWeight": 0.38,
+      "earlyKnowledgeGain": 0.55,
+      "ghostSpread": 0.7
+    },
+    "prompt_tokens": ["precursor ghost", "nonlocal aura", "too-early geometry"]
+  },
+  {
+    "id": "evanescent_blur_chamber",
+    "concepts": ["nonlocality_and_smearing"],
+    "category": "recoverability_limit",
+    "shader_modules": ["operator_smear", "coarse_grain_pass"],
+    "scene_roles": ["hidden_chamber", "barrier_scene", "probe_mode"],
+    "preset_params": {
+      "reconstructionSigma": 0.35,
+      "recoverableDepth": 0.35,
+      "evanescentWeight": 0.7
+    },
+    "prompt_tokens": ["evanescent blur", "hidden bulk swell", "STM reveal"]
+  },
+  {
+    "id": "responsibility_cloud",
+    "concepts": ["bulk_boundary_dictionary", "nonlocality_and_smearing"],
+    "category": "debug_ui",
+    "shader_modules": ["support_cloud_overlay", "boundary_encoders"],
+    "scene_roles": ["debug", "operator_scene", "educational_overlay"],
+    "preset_params": {
+      "supportRadius": 0.22,
+      "responsibilityGain": 1.0,
+      "arcGlow": 0.9
+    },
+    "prompt_tokens": ["responsibility cloud", "support arcs", "boundary ownership map"]
+  },
+  {
+    "id": "renormalized_boundary_fire",
+    "concepts": ["holographic_principle", "holographic_renormalization"],
+    "category": "boundary_response",
+    "shader_modules": ["renorm_field", "post_renorm_debug"],
+    "scene_roles": ["boundary_scene", "portrait_edge", "debug_pass"],
+    "preset_params": {
+      "shellDivergenceGain": 1.3,
+      "countertermStrength": 1.0,
+      "anomalyMix": 0.16
+    },
+    "prompt_tokens": ["renormalized boundary fire", "counterterm scars", "finite response"]
+  },
+  {
+    "id": "observer_patch_dome",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "cosmology",
+    "shader_modules": ["cosmology_state", "screen_stack", "observer_patch"],
+    "scene_roles": ["observer_cosmos", "finite_universe", "cosmic_portrait"],
+    "preset_params": {
+      "hubbleRate": 0.85,
+      "observerHorizonGain": 1.0,
+      "screenAreaBudget": 1.0
+    },
+    "prompt_tokens": ["observer patch", "de Sitter dome", "finite cosmic horizon"]
+  },
+  {
+    "id": "twin_infinity_walls",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "global_cosmology",
+    "shader_modules": ["global_screens", "screen_stack"],
+    "scene_roles": ["cosmic_hall", "temporal_mural", "universe_scene"],
+    "preset_params": {
+      "pastWallGlow": 0.9,
+      "futureWallGlow": 1.1,
+      "screenSeparation": 8.0
+    },
+    "prompt_tokens": ["past infinity wall", "future infinity wall", "global de Sitter screens"]
+  },
+  {
+    "id": "future_horizon_pressure_sea",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "cosmic_field",
+    "shader_modules": ["cosmic_pressure", "future_horizon_forecast"],
+    "scene_roles": ["cosmic_background", "dark_energy_field", "ambient_universe"],
+    "preset_params": {
+      "futureEventHorizon": 3.8,
+      "holographicMatterDensity": 0.22,
+      "teleologicalMix": 0.7
+    },
+    "prompt_tokens": ["future-horizon pressure", "dark energy field", "teleological glow"]
+  },
+  {
+    "id": "dark_radiation_residue",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "primordial_residue",
+    "shader_modules": ["cosmic_pressure", "dark_radiation_layer"],
+    "scene_roles": ["background_layer", "inflation_scene", "cosmic_memory"],
+    "preset_params": {
+      "darkRadiationMix": 0.14,
+      "primordialGrain": 0.18,
+      "epochFade": 0.6
+    },
+    "prompt_tokens": ["dark radiation residue", "primordial ash", "early-universe afterglow"]
+  },
+  {
+    "id": "low_l_silence",
+    "concepts": ["cosmology_and_holographic_matter"],
+    "category": "primordial_suppression",
+    "shader_modules": ["harmonic_cutoff", "cosmic_pressure"],
+    "scene_roles": ["inflation_scene", "cmb_ambient", "macro_void"],
+    "preset_params": {
+      "inflationCutoff": 0.22,
+      "cmbSuppressionBias": 0.5,
+      "macroVoidGain": 0.35
+    },
+    "prompt_tokens": ["missing harmonics", "cosmic silence", "low-l suppression"]
+  }
+]

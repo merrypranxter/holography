@@ -1,0 +1,197 @@
+[
+  {
+    "id": "ads_global_metric",
+    "equation": "ds^2 = (L^2 / cos^2 rho) [ -d tau^2 + d rho^2 + sin^2 rho dOmega^2_(d-1) ]",
+    "meaning": "Global AdS metric with boundary at rho = pi/2"
+  },
+  {
+    "id": "ads_static_metric",
+    "equation": "ds^2 = -(1 + r^2/L^2) d tau^2 + dr^2/(1 + r^2/L^2) + r^2 dOmega^2_(d-1)",
+    "meaning": "Static radial AdS form with boundary at r -> infinity"
+  },
+  {
+    "id": "ads_poincare_metric",
+    "equation": "ds^2 = (L^2 / z^2) (dz^2 + dx_mu dx^mu)",
+    "meaning": "Poincare patch; z is holographic depth"
+  },
+  {
+    "id": "ads_scaling_symmetry",
+    "equation": "(t, x, z) -> (lambda t, lambda x, lambda z)",
+    "meaning": "Scale/radius motivation"
+  },
+  {
+    "id": "fg_metric",
+    "equation": "ds^2 = d rho^2/(4 rho^2) + (1/rho) g_ij(x,rho) dx^i dx^j",
+    "meaning": "Fefferman-Graham near-boundary form"
+  },
+  {
+    "id": "extrapolate_dictionary",
+    "equation": "lim_{z->0} z^{-Delta} Phi(x,t,z) = O(x,t)",
+    "meaning": "Near-boundary bulk field tail is identified with a local boundary operator"
+  },
+  {
+    "id": "bulk_smearing",
+    "equation": "Phi(B) = \u222b db' K(B|b') O(b') + ...",
+    "meaning": "Bulk field reconstructed from boundary operators via a smearing kernel"
+  },
+  {
+    "id": "source_partition_function",
+    "equation": "Z_bulk[phi_(0)] = < exp( -\u222b phi_(0) O ) >",
+    "meaning": "Boundary values of bulk fields act as sources for dual boundary operators"
+  },
+  {
+    "id": "near_boundary_expansion",
+    "equation": "F(x,rho)=rho^m[f_(0)(x)+f_(2)(x)rho+...+rho^n(f_(2n)(x)+log(rho)f~_(2n)(x))+...]",
+    "meaning": "Near-boundary expansion with leading source term and subleading response structure"
+  },
+  {
+    "id": "ryu_takayanagi",
+    "equation": "S(A) = Area(gamma_A) / (4 G_N)",
+    "meaning": "Entanglement entropy of a boundary region A is given by the area of a bulk minimal surface anchored on partial A"
+  },
+  {
+    "id": "mutual_information",
+    "equation": "I(A:B) = S(A) + S(B) - S(A union B)",
+    "meaning": "Shared information between two regions"
+  },
+  {
+    "id": "subadditivity",
+    "equation": "S(AB) <= S(A) + S(B)",
+    "meaning": "Basic entropy consistency condition"
+  },
+  {
+    "id": "strong_subadditivity",
+    "equation": "S(AB) + S(BC) >= S(B) + S(ABC)",
+    "meaning": "Stronger entropy consistency condition"
+  },
+  {
+    "id": "mmi",
+    "equation": "I(A:BC) >= I(A:B) + I(A:C)",
+    "meaning": "Monogamy of mutual information, special to holographic theories"
+  },
+  {
+    "id": "generic_near_boundary_field",
+    "equation": "F(x,rho)=rho^m[f_(0)(x)+f_(2)(x)rho+...+rho^n(f_(2n)(x)+log(rho)f~_(2n)(x))+...]",
+    "meaning": "Generic asymptotic expansion with source, response, and possible anomaly/log terms"
+  },
+  {
+    "id": "bekenstein_hawking_entropy",
+    "equation": "S_BH = A_hor / (4 G_N)",
+    "meaning": "Black-hole entropy is proportional to the horizon area"
+  },
+  {
+    "id": "generalized_second_law",
+    "equation": "S_total = S_matter + S_BH",
+    "meaning": "Matter entropy plus black-hole entropy should not decrease"
+  },
+  {
+    "id": "schwarzschild_metric",
+    "equation": "ds^2 = (1 - 2MG/r) dt^2 - (1 - 2MG/r)^(-1) dr^2 - r^2 dOmega^2",
+    "meaning": "Baseline static black-hole geometry"
+  },
+  {
+    "id": "schwarzschild_radius",
+    "equation": "r_s = 2 M G",
+    "meaning": "Schwarzschild horizon radius"
+  },
+  {
+    "id": "covariant_entropy_bound",
+    "equation": "S[L(B)] <= A(B) / 4",
+    "meaning": "Entropy on any allowed light-sheet of B is bounded by the area of B"
+  },
+  {
+    "id": "holographic_dof_bound",
+    "equation": "N_dof <= A / 4",
+    "meaning": "Independent degrees of freedom on an allowed light-sheet are bounded by area"
+  },
+  {
+    "id": "subregion_light_sheet_domain",
+    "equation": "L(b) = L+(b) \u2229 L-(b)",
+    "meaning": "Boundary subregion domain from intersected past and future light-sheets"
+  },
+  {
+    "id": "causal_light_sheet_equivalence",
+    "equation": "H(b) = C(b) = L(b)",
+    "meaning": "In the analyzed AdS cases, the holographic domain equals both the causal domain and the light-sheet domain"
+  },
+  {
+    "id": "smearing_function",
+    "equation": "Phi(B) = \u222b db' K(B|b') O(b')",
+    "meaning": "Bulk field reconstructed from local boundary operators via a smearing kernel"
+  },
+  {
+    "id": "mode_sum_kernel",
+    "equation": "K(B|b') = \u222b dk Phi_k(B) phi_k*(b') + h.c.",
+    "meaning": "Kernel built from bulk modes and their boundary tails"
+  },
+  {
+    "id": "geodesic_potential",
+    "equation": "f h r_dot^2 + L^2 f / r^2 = E^2 ; U = L^2 f / r^2",
+    "meaning": "Null geodesics move in an effective potential whose trapping diagnoses smearing failure"
+  },
+  {
+    "id": "trapped_mode_criterion",
+    "equation": "d/dr (f/r^2) > 0",
+    "meaning": "Large-l criterion associated with trapped modes and smearing failure in static spherical backgrounds"
+  },
+  {
+    "id": "evanescent_mode",
+    "equation": "J_nu(i kappa z) ~ I_nu(kappa z) ~ exp(kappa z)",
+    "meaning": "Evanescent modes grow exponentially into the bulk"
+  },
+  {
+    "id": "coarse_grain_depth_bound",
+    "equation": "z < sigma",
+    "meaning": "With evanescent modes, coarse-grained reconstruction at boundary scale sigma only resolves bulk out to depth z smaller than sigma"
+  },
+  {
+    "id": "frw_metric",
+    "equation": "ds^2 = a^2(\u03b7)[-d\u03b7^2 + d\u03c7^2 + f^2(\u03c7)d\u03a9^2]",
+    "meaning": "FRW / FLRW cosmology in conformal time"
+  },
+  {
+    "id": "de_sitter_flat_slicing",
+    "equation": "ds^2 = -dt^2 + e^(2Ht)(dr^2 + r^2 d\u03a9^2)",
+    "meaning": "Flat slicing of de Sitter space"
+  },
+  {
+    "id": "de_sitter_horizon_area",
+    "equation": "A_E = 4\u03c0 H^(-2)",
+    "meaning": "Observer event-horizon area in de Sitter space"
+  },
+  {
+    "id": "holographic_matter_density",
+    "equation": "\u03c1_HM = 3 C^2 M_p^2 / L^2",
+    "meaning": "Basic holographic matter / dark-energy density law"
+  },
+  {
+    "id": "future_event_horizon",
+    "equation": "L_f = a(t) \u222b_t^\u221e dt' / a(t')",
+    "meaning": "Future event horizon used as the IR scale in holographic dark energy"
+  },
+  {
+    "id": "friedmann_hde",
+    "equation": "3 M_p^2 H^2 = \u03c1_m + \u03c1_de",
+    "meaning": "Matter plus holographic dark energy Friedmann equation"
+  },
+  {
+    "id": "omega_hde_flow",
+    "equation": "d\u03a9_de/d ln a = \u03a9_de (1-\u03a9_de)(1 + 2 sqrt(\u03a9_de)/C)",
+    "meaning": "Evolution of the holographic dark-energy fraction"
+  },
+  {
+    "id": "hde_equation_of_state",
+    "equation": "w = -1/3 - (2/3) sqrt(\u03a9_de)/C",
+    "meaning": "Equation of state for holographic dark energy"
+  },
+  {
+    "id": "entanglement_hde",
+    "equation": "S_ent ~ \u03b2 N_dof L_h^2 / l^2 ; T = 1/(2\u03c0L_h) ; \u03c1_de = 3 M_p^2 C^2 / L_h^2",
+    "meaning": "Entanglement-entropy route to holographic dark energy"
+  },
+  {
+    "id": "action_principle_hm",
+    "equation": "\u03c1_HM = M_p^2 [ C/(a^2L^2) + \u03bb/(2a^4) ]",
+    "meaning": "Action-principle holographic matter with a dark-radiation-like term"
+  }
+]
