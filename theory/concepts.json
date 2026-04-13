@@ -1,0 +1,335 @@
+[
+  {
+    "id": "holographic_principle",
+    "name": "Holographic Principle",
+    "physics_meaning": "Information content scales with boundary area rather than bulk volume.",
+    "math_forms": [
+      "S_BH = A / (4 G_N ħ)",
+      "S[L(B)] <= A(B) / 4",
+      "N_dof <= A / 4"
+    ],
+    "render_laws": [
+      "surface controls interior",
+      "area controls detail budget",
+      "volume can be hollow",
+      "projection should favor shells and scanfronts"
+    ],
+    "parameters": [
+      "boundaryDensity",
+      "areaBudget",
+      "projectionSharpness",
+      "entropyGlow",
+      "interiorOpacity"
+    ],
+    "modules": [
+      "shell_sdf",
+      "source_field",
+      "boundary_data_field"
+    ],
+    "motifs": [
+      "surface_glyphshell",
+      "renormalized_boundary_fire"
+    ],
+    "failure_modes": [
+      "uniform detail everywhere",
+      "interior more detailed than boundary",
+      "purely decorative shell"
+    ]
+  },
+  {
+    "id": "ads_geometry_and_scale",
+    "name": "AdS Geometry and Scale",
+    "physics_meaning": "Radial bulk depth organizes scale; near-boundary zones encode UV detail and deeper bulk encodes coarser structure.",
+    "math_forms": [
+      "ds^2 = (L^2 / z^2)(dz^2 + dx_mu dx^mu)",
+      "(t,x,z) -> (lambda t, lambda x, lambda z)",
+      "ds^2 = d rho^2/(4 rho^2) + (1/rho) g_ij(x,rho) dx^i dx^j"
+    ],
+    "render_laws": [
+      "radial depth = scale",
+      "boundary zones carry finer frequencies",
+      "deep bulk softens into collective fields"
+    ],
+    "parameters": [
+      "boundaryDepth",
+      "warpIntensity",
+      "uvIrMix",
+      "boundaryDetailGain",
+      "deepBulkSoftness"
+    ],
+    "modules": [
+      "ads_spaces",
+      "uv_ir_field",
+      "radial_flows"
+    ],
+    "motifs": [
+      "ads_edge_saturation"
+    ],
+    "failure_modes": [
+      "uniform frequency across depth",
+      "no boundary cutoff logic",
+      "plain Euclidean tunnel"
+    ]
+  },
+  {
+    "id": "bulk_boundary_dictionary",
+    "name": "Bulk Boundary Dictionary",
+    "physics_meaning": "Bulk fields are encoded by boundary operators; finite-depth reconstruction may use smearing kernels or nonlocal structures.",
+    "math_forms": [
+      "lim_{z->0} z^{-Delta} Phi(x,t,z) = O(x,t)",
+      "Phi(B) = ∫ db' K(B|b') O(b') + ...",
+      "Z_bulk[phi_(0)] = <exp(-∫ phi_(0) O)>"
+    ],
+    "render_laws": [
+      "bulk points depend on distributed boundary support",
+      "source and response must be separated",
+      "global channels can encode deep events"
+    ],
+    "parameters": [
+      "smearRadius",
+      "smearTimeWindow",
+      "responseGain",
+      "causalLag",
+      "nonlocalMix"
+    ],
+    "modules": [
+      "operator_smear",
+      "source_field",
+      "response_field",
+      "boundary_encoders"
+    ],
+    "motifs": [
+      "responsibility_cloud"
+    ],
+    "failure_modes": [
+      "one UV point controls one bulk point",
+      "source and response collapsed together"
+    ]
+  },
+  {
+    "id": "entanglement_geometry",
+    "name": "Entanglement Geometry",
+    "physics_meaning": "Entanglement entropy is represented by bulk minimal surfaces in static holographic settings.",
+    "math_forms": [
+      "S(A) = Area(gamma_A) / (4 G_N)",
+      "I(A:B) = S(A) + S(B) - S(A union B)",
+      "I(A:BC) >= I(A:B) + I(A:C)"
+    ],
+    "render_laws": [
+      "relation creates bridges",
+      "shared information creates membranes",
+      "disconnects tear geometry",
+      "bridge phase can change abruptly"
+    ],
+    "parameters": [
+      "entanglementWeight",
+      "bridgeThreshold",
+      "rtTension",
+      "sharedInteriorWeight",
+      "cutSeverity"
+    ],
+    "modules": [
+      "entanglement_field",
+      "membrane_sdfs",
+      "entanglement_graphs"
+    ],
+    "motifs": [
+      "entanglement_filaments",
+      "rt_soap_film_bridge",
+      "entanglement_tear"
+    ],
+    "failure_modes": [
+      "random webbing",
+      "tube bridges instead of membranes",
+      "no connected/disconnected phase logic"
+    ]
+  },
+  {
+    "id": "holographic_renormalization",
+    "name": "Holographic Renormalization",
+    "physics_meaning": "Near-boundary divergences are regulated by a cutoff and removed with local covariant counterterms, leaving finite source/response data and anomalies.",
+    "math_forms": [
+      "F(x,rho)=rho^m[f_(0)+f_(2)rho+...+rho^n(f_(2n)+log(rho)f~_(2n))+...]",
+      "ds^2 = d rho^2/(4 rho^2) + (1/rho) g_ij(x,rho) dx^i dx^j"
+    ],
+    "render_laws": [
+      "boundary blow-up is structured",
+      "subtract local shell artifacts",
+      "preserve finite response",
+      "keep anomaly residue visible"
+    ],
+    "parameters": [
+      "cutoffRho",
+      "countertermStrength",
+      "shellDivergenceGain",
+      "finitePartGain",
+      "anomalyMix"
+    ],
+    "modules": [
+      "renorm_field",
+      "post_renorm_debug"
+    ],
+    "motifs": [
+      "renormalized_boundary_fire"
+    ],
+    "failure_modes": [
+      "hard-clipping the boundary",
+      "dropping divergences by hand",
+      "discarding anomaly structure"
+    ]
+  },
+  {
+    "id": "black_holes_and_horizons",
+    "name": "Black Holes and Horizons",
+    "physics_meaning": "Horizon area sets black-hole entropy; the stretched horizon acts as an operational information membrane and local readout degrades near and behind it.",
+    "math_forms": [
+      "S_BH = A_hor / (4 G_N)",
+      "r_s = 2MG",
+      "S_total = S_matter + S_BH"
+    ],
+    "render_laws": [
+      "horizon area controls shell complexity",
+      "true horizon and stretched horizon should be separated",
+      "infalling identity thermalizes near shell",
+      "interior readout collapses"
+    ],
+    "parameters": [
+      "horizonRadius",
+      "stretchedHorizonWidth",
+      "thermalScramble",
+      "hawkingGlow",
+      "interiorReadoutLoss"
+    ],
+    "modules": [
+      "blackhole_sdfs",
+      "horizon_scramble",
+      "photon_ring"
+    ],
+    "motifs": [
+      "horizon_glyphfire",
+      "infall_melt"
+    ],
+    "failure_modes": [
+      "matte black sphere",
+      "fully readable interior",
+      "no shell thermalization"
+    ]
+  },
+  {
+    "id": "light_sheets_and_screens",
+    "name": "Light-Sheets and Screens",
+    "physics_meaning": "Allowed holographic projection occurs along null congruences with nonpositive expansion; screens collect projected information and preferred screens occur at zero expansion.",
+    "math_forms": [
+      "S[L(B)] <= A(B) / 4",
+      "L(b) = L+(b) ∩ L-(b)",
+      "H(b) = C(b) = L(b)"
+    ],
+    "render_laws": [
+      "projection should be directional and convergent",
+      "beam families terminate at caustics or sign flips",
+      "screens are display membranes",
+      "theta-zero surfaces deserve emphasis"
+    ],
+    "parameters": [
+      "nullExpansion",
+      "sheetTerminationMode",
+      "causticGain",
+      "screenThreshold",
+      "preferredScreenBias"
+    ],
+    "modules": [
+      "light_sheet_field",
+      "screen_sdfs",
+      "null_geodesic_camera"
+    ],
+    "motifs": [
+      "light_sheet_hologram",
+      "preferred_screen_membrane",
+      "caustic_cathedral"
+    ],
+    "failure_modes": [
+      "uniform inward projection",
+      "arbitrary decorative planes",
+      "ignoring caustics"
+    ]
+  },
+  {
+    "id": "nonlocality_and_smearing",
+    "name": "Nonlocality and Smearing",
+    "physics_meaning": "Local smearing works in favorable backgrounds, but trapped null geodesics, barriers, and evanescent modes can force nonlocal or coarse-grained reconstruction.",
+    "math_forms": [
+      "Phi(B) = ∫ db' K(B|b') O(b')",
+      "d/dr (f/r^2) > 0",
+      "z < sigma"
+    ],
+    "render_laws": [
+      "support clouds are distributed",
+      "precursors can know too early",
+      "some deep zones should stay blurry",
+      "resolution and recoverable depth trade off"
+    ],
+    "parameters": [
+      "precursorWeight",
+      "kernelFailureMode",
+      "trappedGeodesicBias",
+      "evanescentWeight",
+      "reconstructionSigma"
+    ],
+    "modules": [
+      "operator_smear",
+      "precursor_field",
+      "reconstruction_modes"
+    ],
+    "motifs": [
+      "precursor_ghost",
+      "evanescent_blur_chamber",
+      "responsibility_cloud"
+    ],
+    "failure_modes": [
+      "perfect crisp readout in hostile geometry",
+      "no nonlocal rescue channel",
+      "no depth-resolution tradeoff"
+    ]
+  },
+  {
+    "id": "cosmology_and_holographic_matter",
+    "name": "Cosmology and Holographic Matter",
+    "physics_meaning": "Cosmological holography uses time-dependent and embedded screens; holographic matter density is tied to an IR scale such as the future event horizon.",
+    "math_forms": [
+      "ds^2 = a^2(η)[-dη^2 + dχ^2 + f^2(χ)dΩ^2]",
+      "A_E = 4πH^(-2)",
+      "ρ_HM = 3 C^2 M_p^2 / L^2",
+      "L_f = a(t) ∫_t^∞ dt' / a(t')"
+    ],
+    "render_laws": [
+      "screen area changes active complexity",
+      "future horizons can control present fields",
+      "observer patch and global cosmology should be distinct",
+      "dark-radiation residue can carry early-universe memory"
+    ],
+    "parameters": [
+      "scaleFactor",
+      "hubbleRate",
+      "futureEventHorizon",
+      "screenAreaBudget",
+      "darkRadiationMix"
+    ],
+    "modules": [
+      "cosmology_state",
+      "cosmic_pressure",
+      "screen_stack"
+    ],
+    "motifs": [
+      "observer_patch_dome",
+      "twin_infinity_walls",
+      "future_horizon_pressure_sea",
+      "dark_radiation_residue",
+      "low_l_silence"
+    ],
+    "failure_modes": [
+      "fixed information budget in expanding scenes",
+      "no distinction between observer and global de Sitter",
+      "random fog instead of horizon-linked field"
+    ]
+  }
+]

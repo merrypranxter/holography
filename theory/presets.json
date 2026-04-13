@@ -1,0 +1,88 @@
+{
+  "scenePresets": {
+    "glyphSaint": {
+      "motifs": ["surface_glyphshell", "renormalized_boundary_fire"],
+      "description": "Holographic portrait with encoded surface skin and finite interior response",
+      "params": {
+        "shellGlow": 1.4,
+        "glyphDensity": 18.0,
+        "interiorOpacity": 0.15,
+        "shellDivergenceGain": 1.3,
+        "countertermStrength": 1.0,
+        "anomalyMix": 0.16
+      }
+    },
+    "adsBasilica": {
+      "motifs": ["ads_edge_saturation", "preferred_screen_membrane", "caustic_cathedral"],
+      "description": "Cathedral tunnel with radial scale gradient and screen architecture",
+      "params": {
+        "boundaryDepth": 0.03,
+        "warpIntensity": 1.15,
+        "uvIrMix": 0.8,
+        "screenThreshold": 0.03,
+        "preferredScreenBias": 1.6,
+        "beamCount": 8,
+        "causticRadius": 1.4
+      }
+    },
+    "entropyLovers": {
+      "motifs": ["entanglement_filaments", "rt_soap_film_bridge"],
+      "description": "Paired figures connected by entanglement membrane",
+      "params": {
+        "threadDensity": 36,
+        "entanglementWeight": 0.7,
+        "bridgeThreshold": 0.45,
+        "rtTension": 0.72,
+        "membraneGlow": 1.28
+      }
+    },
+    "blackSun": {
+      "motifs": ["horizon_glyphfire", "infall_melt"],
+      "description": "Black hole scene with thermal shell and identity dissolution",
+      "params": {
+        "horizonRadius": 0.9,
+        "stretchedHorizonWidth": 0.06,
+        "thermalScramble": 0.85,
+        "hawkingGlow": 0.18,
+        "photonRingGain": 0.45,
+        "identityLossSharpness": 0.8
+      }
+    },
+    "precursorOracle": {
+      "motifs": ["precursor_ghost", "responsibility_cloud"],
+      "description": "Latent-event scene with nonlocal aura and visible causation map",
+      "params": {
+        "precursorWeight": 0.38,
+        "earlyKnowledgeGain": 0.55,
+        "ghostSpread": 0.7,
+        "supportRadius": 0.22,
+        "responsibilityGain": 1.0
+      }
+    },
+    "deSitterEye": {
+      "motifs": ["observer_patch_dome", "future_horizon_pressure_sea"],
+      "description": "Observer-centric finite cosmic horizon with pressure field",
+      "params": {
+        "hubbleRate": 0.85,
+        "observerHorizonGain": 1.0,
+        "screenAreaBudget": 1.0,
+        "futureEventHorizon": 3.8,
+        "holographicMatterDensity": 0.22,
+        "teleologicalMix": 0.7
+      }
+    },
+    "futureTide": {
+      "motifs": ["future_horizon_pressure_sea", "dark_radiation_residue", "low_l_silence"],
+      "description": "Cosmic ambient field with horizon pressure and primordial memory",
+      "params": {
+        "futureEventHorizon": 3.8,
+        "holographicMatterDensity": 0.22,
+        "teleologicalMix": 0.7,
+        "darkRadiationMix": 0.14,
+        "primordialGrain": 0.18,
+        "inflationCutoff": 0.22,
+        "cmbSuppressionBias": 0.5
+      }
+    }
+  }
+}
