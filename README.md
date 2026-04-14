@@ -2,6 +2,28 @@
 
 A research-and-implementation repo for translating holography mathematics into procedural visual systems for shader art, raymarching, GLSL, and JavaScript.
 
+## 🚀 Quick Start
+
+```bash
+# Clone and explore
+git clone https://github.com/merrypranxter/holography.git
+cd holography
+
+# Start local server
+python3 -m http.server 8000
+
+# Open in browser
+# http://localhost:8000           → Interactive Viewer
+# http://localhost:8000/docs.html → Theory Browser
+```
+
+**Features:**
+- ✨ Interactive shader viewer with live parameter controls
+- 📚 9 physics concepts (holographic principle, AdS geometry, entanglement, etc.)
+- 🎨 3 working shader scenes (horizon hologram, light sheets, RT surfaces)
+- 🎛️ Debug visualization modes
+- 📖 Complete theory documentation
+
 ## Goal
 Build computational analogs of holographic principles:
 - surface-area encoded complexity

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holography Theory Docs</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
+      color: #e0e0e0;
+      line-height: 1.8;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      height: 100vh;
+    }
+
+    .sidebar {
+      background: rgba(0, 0, 0, 0.8);
+      border-right: 2px solid #ff00ff;
+      padding: 30px 20px;
+      overflow-y: auto;
+    }
+
+    h1 {
+      color: #ff00ff;
+      font-size: 1.5em;
+      margin-bottom: 30px;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .doc-list {
+      list-style: none;
+    }
+
+    .doc-item {
+      background: rgba(255, 0, 255, 0.05);
+      border-left: 3px solid transparent;
+      padding: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    .doc-item:hover {
+      background: rgba(255, 0, 255, 0.15);
+      border-left-color: #ff00ff;
+      transform: translateX(5px);
+    }
+
+    .doc-item.active {
+      background: rgba(255, 0, 255, 0.3);
+      border-left-color: #00ffff;
+    }
+
+    .doc-number {
+      color: #00ffff;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .content-area {
+      padding: 60px 80px;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .markdown-body {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .markdown-body h1 {
+      color: #ff00ff;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ff00ff;
+      padding-bottom: 10px;
+      font-family: 'Georgia', serif;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .markdown-body h2 {
+      color: #00ffff;
+      font-size: 1.8em;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-left: 5px solid #00ffff;
+      padding-left: 15px;
+    }
+
+    .markdown-body h3 {
+      color: #ff00ff;
+      font-size: 1.3em;
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+
+    .markdown-body p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      color: #d0d0d0;
+    }
+
+    .markdown-body code {
+      background: rgba(0, 255, 255, 0.1);
+      border: 1px solid #00ffff;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      color: #00ffff;
+      font-size: 0.9em;
+    }
+
+    .markdown-body pre {
+      background: #000;
+      border: 2px solid #ff00ff;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    .markdown-body pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #00ffff;
+      font-size: 0.85em;
+    }
+
+    .markdown-body ul, .markdown-body ol {
+      margin-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    .markdown-body li {
+      margin-bottom: 10px;
+    }
+
+    .markdown-body blockquote {
+      border-left: 4px solid #ff00ff;
+      padding-left: 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #b0b0b0;
+    }
+
+    .markdown-body a {
+      color: #00ffff;
+      text-decoration: none;
+      border-bottom: 1px solid #00ffff;
+      transition: all 0.2s;
+    }
+
+    .markdown-body a:hover {
+      color: #ff00ff;
+      border-bottom-color: #ff00ff;
+    }
+
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .markdown-body th, .markdown-body td {
+      border: 1px solid #333;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .markdown-body th {
+      background: rgba(255, 0, 255, 0.2);
+      color: #ff00ff;
+      font-weight: bold;
+    }
+
+    .markdown-body tr:nth-child(even) {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .loading {
+      text-align: center;
+      padding: 100px 20px;
+      color: #ff00ff;
+      font-size: 1.5em;
+      font-family: 'Courier New', monospace;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #ff00ff, #00ffff);
+      border-radius: 5px;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #ff00ff, #00ffff);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+
+    .back-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(255, 0, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">← Interactive Viewer</a>
+
+  <div class="container">
+    <div class="sidebar">
+      <h1>📚 Theory Docs</h1>
+      <ul class="doc-list" id="docList"></ul>
+    </div>
+
+    <div class="content-area">
+      <div class="markdown-body" id="content">
+        <div class="loading">Select a document to read</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const docs = [
+      { file: '00_repo_vision.md', title: 'Repo Vision' },
+      { file: '01_holographic_principle.md', title: 'Holographic Principle' },
+      { file: '02_ads_geometry_and_scale.md', title: 'AdS Geometry & Scale' },
+      { file: '03_bulk_boundary_dictionary.md', title: 'Bulk-Boundary Dictionary' },
+      { file: '04_entanglement_geometry.md', title: 'Entanglement Geometry' },
+      { file: '05_holographic_renormalization.md', title: 'Holographic Renormalization' },
+      { file: '06_black_holes_and_horizons.md', title: 'Black Holes & Horizons' },
+      { file: '07_light_sheets_and_screens.md', title: 'Light Sheets & Screens' },
+      { file: '08_nonlocality_and_smearing.md', title: 'Nonlocality & Smearing' },
+      { file: '09_cosmology_and_holographic_matter.md', title: 'Cosmology & Holographic Matter' },
+      { file: '10_shader_translation_guide.md', title: 'Shader Translation Guide' },
+      { file: '11_visual_motif_library.md', title: 'Visual Motif Library' },
+      { file: '12_glossary.md', title: 'Glossary' }
+    ];
+
+    function renderDocList() {
+      const list = document.getElementById('docList');
+      list.innerHTML = docs.map((doc, index) => {
+        const num = String(index).padStart(2, '0');
+        return `
+          <li class="doc-item" onclick="loadDoc('${doc.file}', ${index})">
+            <span class="doc-number">${num}</span>
+            ${doc.title}
+          </li>
+        `;
+      }).join('');
+    }
+
+    async function loadDoc(filename, index) {
+      try {
+        const response = await fetch(`./docs/${filename}`);
+        const markdown = await response.text();
+        const html = marked.parse(markdown);
+        
+        document.getElementById('content').innerHTML = html;
+        
+        // Update active state
+        document.querySelectorAll('.doc-item').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.doc-item')[index].classList.add('active');
+        
+        // Scroll to top
+        document.querySelector('.content-area').scrollTop = 0;
+      } catch (error) {
+        console.error('Failed to load document:', error);
+        document.getElementById('content').innerHTML = `
+          <div class="loading">
+            Failed to load document.<br>
+            Make sure you're running a local server.
+          </div>
+        `;
+      }
+    }
+
+    // Initialize
+    renderDocList();
+    
+    // Load first doc by default
+    loadDoc(docs[0].file, 0);
+  </script>
+</body>
+</html>
